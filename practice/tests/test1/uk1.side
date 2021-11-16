@@ -1,0 +1,128 @@
+{
+  "id": "6db9d5d8-4f80-4c81-915e-1a0b97f650a6",
+  "version": "2.0",
+  "name": "uk1",
+  "url": "http://books.nis-su.eu",
+  "tests": [{
+    "id": "03f2dddf-ca21-490b-812c-e52f58ff2ed7",
+    "name": "LOGIN_T1",
+    "commands": [{
+      "id": "3fbb6d4d-6fd9-4f5a-beaa-3421fa6a7805",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd9a2971-f133-4cb0-8dfd-4efe69119181",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1258x936",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "064e1d71-2552-4c42-ab9e-3d87591a09a3",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_lLoginStatus",
+      "targets": [
+        ["id=ctl00_lLoginStatus", "id"],
+        ["linkText=Вход", "linkText"],
+        ["css=#ctl00_lLoginStatus", "css:finder"],
+        ["xpath=//a[contains(text(),'Вход')]", "xpath:link"],
+        ["xpath=//a[@id='ctl00_lLoginStatus']", "xpath:attributes"],
+        ["xpath=//form[@id='aspnetForm']/table/tbody/tr/td[2]/table/tbody/tr/td[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, \"javascript:__doPostBack('ctl00$lLoginStatus$ctl02','')\")]", "xpath:href"],
+        ["xpath=//td[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Вход')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "360eef3b-d5fd-472c-bda8-f30914da1d2f",
+      "comment": "",
+      "command": "type",
+      "target": "id=ctl00_ContentPlaceHolder_tbUsername",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_tbUsername", "id"],
+        ["name=ctl00$ContentPlaceHolder$tbUsername", "name"],
+        ["css=#ctl00_ContentPlaceHolder_tbUsername", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_tbUsername']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/center/table/tbody/tr/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "nqkoi"
+    }, {
+      "id": "dc0ea133-1f13-4b7f-86ea-e1786c5bd59b",
+      "comment": "",
+      "command": "type",
+      "target": "id=ctl00_ContentPlaceHolder_tbPassword",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_tbPassword", "id"],
+        ["name=ctl00$ContentPlaceHolder$tbPassword", "name"],
+        ["css=#ctl00_ContentPlaceHolder_tbPassword", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_tbPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/center/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "nqkoi"
+    }, {
+      "id": "e83ef4f9-0aa8-4c47-a41b-421b66af2218",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_ContentPlaceHolder_lbLogin",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_lbLogin", "id"],
+        ["name=ctl00$ContentPlaceHolder$lbLogin", "name"],
+        ["css=#ctl00_ContentPlaceHolder_lbLogin", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_lbLogin']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/center/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a222a9ff-89bf-4140-a139-2103837a6814",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=ctl00_hlLoggedUser",
+      "targets": [
+        ["id=ctl00_hlLoggedUser", "id"],
+        ["linkText=nqkoi sitam", "linkText"],
+        ["css=#ctl00_hlLoggedUser", "css:finder"],
+        ["xpath=//a[contains(text(),'nqkoi sitam')]", "xpath:link"],
+        ["xpath=//a[@id='ctl00_hlLoggedUser']", "xpath:attributes"],
+        ["xpath=//form[@id='aspnetForm']/table/tbody/tr/td[2]/div/table/tbody/tr[2]/td/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Profile/UserDetails.aspx')]", "xpath:href"],
+        ["xpath=//tr[2]/td/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'nqkoi sitam')]", "xpath:innerText"]
+      ],
+      "value": "nqkoi sitam"
+    }, {
+      "id": "e89dea15-1a43-4685-970d-96dd0a7d1010",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_lLoginStatus",
+      "targets": [
+        ["id=ctl00_lLoginStatus", "id"],
+        ["linkText=Изход", "linkText"],
+        ["css=#ctl00_lLoginStatus", "css:finder"],
+        ["xpath=//a[contains(text(),'Изход')]", "xpath:link"],
+        ["xpath=//a[@id='ctl00_lLoginStatus']", "xpath:attributes"],
+        ["xpath=//form[@id='aspnetForm']/table/tbody/tr/td[2]/table/tbody/tr/td[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, \"javascript:__doPostBack('ctl00$lLoginStatus$ctl00','')\")]", "xpath:href"],
+        ["xpath=//td[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Изход')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "0234b45f-ec9f-4015-bbb1-a9b0f3aab94f",
+    "name": "tests1",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://books.nis-su.eu/"],
+  "plugins": []
+}
