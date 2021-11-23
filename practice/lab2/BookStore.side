@@ -1,0 +1,711 @@
+{
+  "id": "3aa2a971-3d43-4b88-ba6b-a48823ef21c5",
+  "version": "2.0",
+  "name": "BookStore",
+  "url": "http://books.nis-su.eu/",
+  "tests": [{
+    "id": "36fbc0dc-b70d-4f91-a087-21830fce401c",
+    "name": "LoginTest",
+    "commands": [{
+      "id": "3359ae1a-f833-4b01-89eb-089fa53bb5ae",
+      "comment": "",
+      "command": "open",
+      "target": "/Home.aspx",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f0a6a62-ab27-46f1-880a-081e99f6be21",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1258x936",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "60b7ff95-623d-4648-9d19-6cbd854bb892",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_lLoginStatus",
+      "targets": [
+        ["id=ctl00_lLoginStatus", "id"],
+        ["linkText=Вход", "linkText"],
+        ["css=#ctl00_lLoginStatus", "css:finder"],
+        ["xpath=//a[contains(text(),'Вход')]", "xpath:link"],
+        ["xpath=//a[@id='ctl00_lLoginStatus']", "xpath:attributes"],
+        ["xpath=//form[@id='aspnetForm']/table/tbody/tr/td[2]/table/tbody/tr/td[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, \"javascript:__doPostBack('ctl00$lLoginStatus$ctl02','')\")]", "xpath:href"],
+        ["xpath=//td[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Вход')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ddf2c75e-3043-444f-bfa1-840c4cf1e5bc",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_ContentPlaceHolder_tbUsername",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_tbUsername", "id"],
+        ["name=ctl00$ContentPlaceHolder$tbUsername", "name"],
+        ["css=#ctl00_ContentPlaceHolder_tbUsername", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_tbUsername']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/center/table/tbody/tr/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1cffc5e-2eb0-421e-b59c-17116631e9ca",
+      "comment": "",
+      "command": "type",
+      "target": "id=ctl00_ContentPlaceHolder_tbUsername",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_tbUsername", "id"],
+        ["name=ctl00$ContentPlaceHolder$tbUsername", "name"],
+        ["css=#ctl00_ContentPlaceHolder_tbUsername", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_tbUsername']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/center/table/tbody/tr/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "nqkoi"
+    }, {
+      "id": "9b3d56bd-1c27-4268-8093-ac4d81be02c1",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_ContentPlaceHolder_tbPassword",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_tbPassword", "id"],
+        ["name=ctl00$ContentPlaceHolder$tbPassword", "name"],
+        ["css=#ctl00_ContentPlaceHolder_tbPassword", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_tbPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/center/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92bc1d23-d889-4cad-8518-c60335e95256",
+      "comment": "",
+      "command": "store",
+      "target": "nqkoi",
+      "targets": [],
+      "value": "loginpassword"
+    }, {
+      "id": "fdeadabc-5842-41f0-a94a-51f2107801f9",
+      "comment": "",
+      "command": "type",
+      "target": "id=ctl00_ContentPlaceHolder_tbPassword",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_tbPassword", "id"],
+        ["name=ctl00$ContentPlaceHolder$tbPassword", "name"],
+        ["css=#ctl00_ContentPlaceHolder_tbPassword", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_tbPassword']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/center/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "${loginpassword}"
+    }, {
+      "id": "f123311d-b76b-412a-b68f-07dae1aa77fd",
+      "comment": "",
+      "command": "if",
+      "target": "${loginpassword} === \"nqkoi\"",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4e4177de-7ebb-40cb-9bd5-858bf1f0c2f2",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"correct password\"",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "476b690d-10ed-4d57-94cb-8d1aeb9f7b31",
+      "comment": "",
+      "command": "else",
+      "target": "return \"wrong password\"",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "95e17bfd-a963-4cbf-acc8-7e63679bdc2e",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3fa73a6b-acbc-42e3-afe0-8525794f8170",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_ContentPlaceHolder_lbLogin",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_lbLogin", "id"],
+        ["name=ctl00$ContentPlaceHolder$lbLogin", "name"],
+        ["css=#ctl00_ContentPlaceHolder_lbLogin", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_lbLogin']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/center/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "93133b54-4aca-4900-9718-ecbfb7301aac",
+      "comment": "",
+      "command": "assert",
+      "target": "output",
+      "targets": [],
+      "value": "correct password"
+    }]
+  }, {
+    "id": "d10e71df-a235-4d13-80b6-a752e6f23b78",
+    "name": "SearchTest",
+    "commands": [{
+      "id": "7edbf09e-bf22-45a9-ab0c-d937d247cc77",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ac4b277-8486-47b4-bc2e-1199ffc4d8a9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1258x936",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d418d64a-e635-4151-a05d-e15ee10e1dce",
+      "comment": "",
+      "command": "click",
+      "target": "css=.collapsiblePanelHeader",
+      "targets": [
+        ["css=.collapsiblePanelHeader", "css:finder"],
+        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_pnlExpand']/div", "xpath:idRelative"],
+        ["xpath=//td[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77621596-4c6a-4a88-878e-e934024bcb88",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres", "id"],
+        ["name=ctl00$ContentPlaceHolder$mboBookSearch$ddlGenres", "name"],
+        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres", "css:finder"],
+        ["xpath=//select[@id='ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_pnlAdvancedSearch']/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b445b7de-fb83-4620-b1f2-b62a948546fe",
+      "comment": "",
+      "command": "select",
+      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres",
+      "targets": [],
+      "value": "label=Документални"
+    }, {
+      "id": "ea3c37b8-718e-47c0-a0e3-6dac37b8f59a",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_btnSearch",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_mboBookSearch_btnSearch", "id"],
+        ["name=ctl00$ContentPlaceHolder$mboBookSearch$btnSearch", "name"],
+        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_btnSearch", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_mboBookSearch_btnSearch']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_divSearchSort']/input[2]", "xpath:idRelative"],
+        ["xpath=//td[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28dc607e-045c-488b-b257-0661c89f51c2",
+      "comment": "",
+      "command": "store",
+      "target": "Programming",
+      "targets": [],
+      "value": "searchCategory"
+    }, {
+      "id": "2d134a94-de9f-474b-930c-08fbc18520ba",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=tr:nth-child(4) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(4) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tr[@id='ctl00_ContentPlaceHolder_mboBookSearch_lvBooks_ctrl0_tableRow']/td/table/tbody/tr[4]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]", "xpath:position"]
+      ],
+      "value": "${seachCategory}"
+    }]
+  }, {
+    "id": "b1003969-8631-4390-9879-ba30cf272123",
+    "name": "RegistrationTest",
+    "commands": [{
+      "id": "c4e93227-4610-4b21-a250-4b9fab4089f3",
+      "comment": "",
+      "command": "open",
+      "target": "/Home.aspx",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "52a5e157-7a04-4d49-96fe-1cf720e974da",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1258x936",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5cad3dbb-d409-458c-adbd-ba851c85ea9f",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_lLoginStatus",
+      "targets": [
+        ["id=ctl00_lLoginStatus", "id"],
+        ["linkText=Вход", "linkText"],
+        ["css=#ctl00_lLoginStatus", "css:finder"],
+        ["xpath=//a[contains(text(),'Вход')]", "xpath:link"],
+        ["xpath=//a[@id='ctl00_lLoginStatus']", "xpath:attributes"],
+        ["xpath=//form[@id='aspnetForm']/table/tbody/tr/td[2]/table/tbody/tr/td[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, \"javascript:__doPostBack('ctl00$lLoginStatus$ctl02','')\")]", "xpath:href"],
+        ["xpath=//td[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Вход')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "92e4dac2-48fa-4211-8b5a-111ffc76401a",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_ContentPlaceHolder_hlRegister",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_hlRegister", "id"],
+        ["linkText=Регистрация", "linkText"],
+        ["css=#ctl00_ContentPlaceHolder_hlRegister", "css:finder"],
+        ["xpath=//a[contains(text(),'Регистрация')]", "xpath:link"],
+        ["xpath=//a[@id='ctl00_ContentPlaceHolder_hlRegister']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/center/table/tbody/tr[4]/td[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Profile/UserDetails.aspx?r=1')]", "xpath:href"],
+        ["xpath=//tr[4]/td[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Регистрация')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f822db6-340d-48f7-ac16-91003efba6c4",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=ctl00_ContentPlaceHolder_tbFirstName",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_tbFirstName", "id"],
+        ["name=ctl00$ContentPlaceHolder$tbFirstName", "name"],
+        ["css=#ctl00_ContentPlaceHolder_tbFirstName", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_tbFirstName']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f02f895-8073-4f6d-96b9-787eb8ac0c27",
+      "comment": "",
+      "command": "echo",
+      "target": "First Name verified",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7b873e49-39fa-476e-92b0-e47c53288fb7",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=ctl00_ContentPlaceHolder_tbLastName",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_tbLastName", "id"],
+        ["name=ctl00$ContentPlaceHolder$tbLastName", "name"],
+        ["css=#ctl00_ContentPlaceHolder_tbLastName", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_tbLastName']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[3]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5720ba72-4a75-400a-b343-cb669aed8e2a",
+      "comment": "",
+      "command": "echo",
+      "target": "Last Name verified",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "062da44b-626e-4eb7-8acd-89ab21b4bd2a",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=wrong_first_name",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_tbFirstName", "id"],
+        ["name=ctl00$ContentPlaceHolder$tbFirstName", "name"],
+        ["css=#ctl00_ContentPlaceHolder_tbFirstName", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_tbFirstName']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4397c852-5205-44f7-999b-65c6d6e814b2",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=wrong_last_name",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_tbFirstName", "id"],
+        ["name=ctl00$ContentPlaceHolder$tbFirstName", "name"],
+        ["css=#ctl00_ContentPlaceHolder_tbFirstName", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_tbFirstName']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ctl04']/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d273ad81-0ed3-4fd1-b3ff-d832ac6e610e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=wrong_last_name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f2cdcd3-7232-483c-af8f-146f9ec23ae6",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=wrong_last_name",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "2f745475-07b5-47ed-83ef-6471bc680215",
+    "name": "ShoppingCartTest",
+    "commands": [{
+      "id": "b6b146ab-f0ab-48b0-8730-f817a9fe44c1",
+      "comment": "",
+      "command": "open",
+      "target": "https://ardes.bg/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "603a3955-af11-4d0c-95a4-88154073cb6a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1258x936",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e27f3c3-4b1c-4b53-a337-c1a338c86272",
+      "comment": "",
+      "command": "click",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form[@id='nav_search_form']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f4b71fe-f9ec-4059-85d3-00c192b3962c",
+      "comment": "",
+      "command": "type",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form[@id='nav_search_form']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "lenovo"
+    }, {
+      "id": "611635d6-ee40-4456-9942-4cd024aea744",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-search",
+      "targets": [
+        ["css=.fa-search", "css:finder"],
+        ["xpath=//button[@id='searchbtn']/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2bcbc3c6-ade3-4697-a653-9d6f5cfc8fda",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-xxl-3:nth-child(1) .netpeak-link",
+      "targets": [
+        ["css=.col-xxl-3:nth-child(1) .netpeak-link", "css:finder"],
+        ["xpath=//div[@id='ajax_content']/div[2]/div[2]/div/div/div/div[4]/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'ВИЖ ОЩЕ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "04b9aceb-9523-4146-beb3-6a775520c0d3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=КУПИ",
+      "targets": [
+        ["linkText=КУПИ", "linkText"],
+        ["css=.sale-action > #add-205089", "css:finder"],
+        ["xpath=//a[contains(text(),'КУПИ')]", "xpath:link"],
+        ["xpath=(//a[@id='add-205089'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='buying-info']/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'КУПИ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0cd7736-d94b-42aa-99e8-73752b3441c0",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 1",
+      "targets": [],
+      "value": "loopVariable"
+    }, {
+      "id": "9c7b0168-a211-4d27-9801-6e6a404bc21b",
+      "comment": "",
+      "command": "do",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8a782e26-238e-4f77-9b35-772385954d57",
+      "comment": "",
+      "command": "echo",
+      "target": "${loopVariable}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cdc4da36-bba5-415a-9ea8-2164b05f7e95",
+      "comment": "",
+      "command": "click",
+      "target": "css=.incr",
+      "targets": [
+        ["css=.incr", "css:finder"],
+        ["xpath=//form[@id='cartForm']/div[2]/div/div/div[3]/div/div[2]/div/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6a22aed-0b8f-4022-8016-69639b890d60",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${loopVariable} + 1",
+      "targets": [],
+      "value": "loopVariable"
+    }, {
+      "id": "84337853-23df-493c-ae89-ebfa4e68da13",
+      "comment": "",
+      "command": "repeatIf",
+      "target": "${loopVariable} < 3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ed64ff3-8030-41b8-bfa1-b980f974c5bd",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.i-price",
+      "targets": [
+        ["css=.i-price", "css:finder"],
+        ["xpath=//form[@id='cartForm']/div[2]/div/div/div[3]/div/div[2]/div/div[2]/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'160.00')]", "xpath:innerText"]
+      ],
+      "value": "itemPrice"
+    }, {
+      "id": "dc9c15e4-12d3-4aa5-b30a-a4a9f15b25b0",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.quantity@value",
+      "targets": [],
+      "value": "itemQuantity"
+    }, {
+      "id": "9797fbc6-63a3-47e9-818b-1143c39d80b5",
+      "comment": "",
+      "command": "echo",
+      "target": "${itemPrice}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ee5e844-e2ae-4f02-97b9-77a8e92969d9",
+      "comment": "",
+      "command": "echo",
+      "target": "${itemQuantity}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2cb3ff14-30a1-4173-889d-73efc7e66b12",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return parseFloat(${itemPrice}*${itemQuantity}).toFixed(2)",
+      "targets": [],
+      "value": "total"
+    }, {
+      "id": "26bf71e7-534f-4494-a72d-28801fd7acf2",
+      "comment": "",
+      "command": "echo",
+      "target": "${total}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe057745-ef19-4db2-bcdb-a82379c85041",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.qty-price > .p",
+      "targets": [
+        ["css=.qty-price > .p", "css:finder"],
+        ["xpath=//form[@id='cartForm']/div[2]/div/div/div[3]/div/div[2]/div/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[3]/div[2]", "xpath:position"]
+      ],
+      "value": "${total}лв"
+    }, {
+      "id": "03bd0adf-57fc-46f1-86f8-c59f1f08df8b",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return parseFloat(${itemPrice}*3).toFixed(2)",
+      "targets": [],
+      "value": "total"
+    }, {
+      "id": "7a62108c-5adf-41f8-a896-4958861c4010",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.qty-price > .p",
+      "targets": [
+        ["css=.qty-price > .p", "css:finder"],
+        ["xpath=//form[@id='cartForm']/div[2]/div/div/div[3]/div/div[2]/div/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[3]/div[2]", "xpath:position"]
+      ],
+      "value": "${total}лв"
+    }]
+  }, {
+    "id": "2681c6df-7b94-478e-90cc-f79fa292699a",
+    "name": "TitleSearchTest",
+    "commands": [{
+      "id": "802979b9-ecde-4bfd-9d4e-1501e436125f",
+      "comment": "",
+      "command": "open",
+      "target": "http://books.nis-su.eu/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d3c782b6-c89e-4aeb-8656-02ba8a2e4537",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1258x936",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8f5085b2-2cbe-4031-9e23-eb5da29dcbcc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.collapsiblePanelHeader",
+      "targets": [
+        ["css=.collapsiblePanelHeader", "css:finder"],
+        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_pnlExpand']/div", "xpath:idRelative"],
+        ["xpath=//td[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9c64224-711a-4746-aa1c-0cbedfe9995c",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres", "id"],
+        ["name=ctl00$ContentPlaceHolder$mboBookSearch$ddlGenres", "name"],
+        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres", "css:finder"],
+        ["xpath=//select[@id='ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_pnlAdvancedSearch']/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db5ade9d-107e-435e-b3a2-0b58ff9f676c",
+      "comment": "",
+      "command": "store",
+      "target": "Programming",
+      "targets": [],
+      "value": "category"
+    }, {
+      "id": "9ecf5c68-f0d1-4c18-aa1c-5692a8c0455e",
+      "comment": "",
+      "command": "select",
+      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres",
+      "targets": [],
+      "value": "label=Документални"
+    }, {
+      "id": "a1c2c91a-0e49-4171-8ac4-809cd5e2164f",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_tbSearch",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_mboBookSearch_tbSearch", "id"],
+        ["name=ctl00$ContentPlaceHolder$mboBookSearch$tbSearch", "name"],
+        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_tbSearch", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_mboBookSearch_tbSearch']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_divSearchSort']/input", "xpath:idRelative"],
+        ["xpath=//td[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "551e1cfb-fc8b-4db2-bc14-6b22921e4d39",
+      "comment": "",
+      "command": "store",
+      "target": "A Sharp Combination",
+      "targets": [],
+      "value": "title"
+    }, {
+      "id": "9f000a75-722f-4049-b944-d33e09461b2d",
+      "comment": "",
+      "command": "type",
+      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_tbSearch",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_mboBookSearch_tbSearch", "id"],
+        ["name=ctl00$ContentPlaceHolder$mboBookSearch$tbSearch", "name"],
+        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_tbSearch", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_mboBookSearch_tbSearch']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_divSearchSort']/input", "xpath:idRelative"],
+        ["xpath=//td[2]/div/input", "xpath:position"]
+      ],
+      "value": " Testing of web based systems"
+    }, {
+      "id": "b7deed5b-fc8e-4a71-827e-adb2827c5387",
+      "comment": "",
+      "command": "click",
+      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_btnSearch",
+      "targets": [
+        ["id=ctl00_ContentPlaceHolder_mboBookSearch_btnSearch", "id"],
+        ["name=ctl00$ContentPlaceHolder$mboBookSearch$btnSearch", "name"],
+        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_btnSearch", "css:finder"],
+        ["xpath=//input[@id='ctl00_ContentPlaceHolder_mboBookSearch_btnSearch']", "xpath:attributes"],
+        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_divSearchSort']/input[2]", "xpath:idRelative"],
+        ["xpath=//td[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8bde99de-23a7-4bc5-a3d2-52187b02d67e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=#ctl00_ContentPlaceHolder_mboBookSearch_lvBooks_ctrl0_tableRow table",
+      "targets": [
+        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_lvBooks_ctrl0_tableRow table", "css:finder"],
+        ["xpath=//tr[@id='ctl00_ContentPlaceHolder_mboBookSearch_lvBooks_ctrl0_tableRow']/td/table", "xpath:idRelative"],
+        ["xpath=//td[2]/table/tbody/tr/td/table", "xpath:position"]
+      ],
+      "value": "1000"
+    }, {
+      "id": "2bc0a94a-e5fc-4d89-92a4-234927415079",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#ctl00_ContentPlaceHolder_mboBookSearch_lvBooks_ctrl0_tableRow table",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4b9ba613-a7f3-4ec0-b8cb-5613c6c6a0cc",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://books.nis-su.eu/"],
+  "plugins": []
+}
