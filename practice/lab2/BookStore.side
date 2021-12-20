@@ -580,121 +580,69 @@
       "id": "802979b9-ecde-4bfd-9d4e-1501e436125f",
       "comment": "",
       "command": "open",
-      "target": "http://books.nis-su.eu/",
+      "target": "https://ardes.bg/",
       "targets": [],
       "value": ""
     }, {
-      "id": "d3c782b6-c89e-4aeb-8656-02ba8a2e4537",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1258x936",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "8f5085b2-2cbe-4031-9e23-eb5da29dcbcc",
+      "id": "792b0517-f1f6-431d-b1ed-012ebe7d1c5c",
       "comment": "",
       "command": "click",
-      "target": "css=.collapsiblePanelHeader",
+      "target": "name=q",
       "targets": [
-        ["css=.collapsiblePanelHeader", "css:finder"],
-        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_pnlExpand']/div", "xpath:idRelative"],
-        ["xpath=//td[2]/div/div/div", "xpath:position"]
+        ["name=q", "name"],
+        ["css=#nav_search_form > .form-control", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form[@id='nav_search_form']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "f9c64224-711a-4746-aa1c-0cbedfe9995c",
-      "comment": "",
-      "command": "click",
-      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres",
-      "targets": [
-        ["id=ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres", "id"],
-        ["name=ctl00$ContentPlaceHolder$mboBookSearch$ddlGenres", "name"],
-        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres", "css:finder"],
-        ["xpath=//select[@id='ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres']", "xpath:attributes"],
-        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_pnlAdvancedSearch']/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
-        ["xpath=//tr[2]/td[2]/select", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "db5ade9d-107e-435e-b3a2-0b58ff9f676c",
-      "comment": "",
-      "command": "store",
-      "target": "Programming",
-      "targets": [],
-      "value": "category"
-    }, {
-      "id": "9ecf5c68-f0d1-4c18-aa1c-5692a8c0455e",
-      "comment": "",
-      "command": "select",
-      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_ddlGenres",
-      "targets": [],
-      "value": "label=Документални"
-    }, {
-      "id": "a1c2c91a-0e49-4171-8ac4-809cd5e2164f",
-      "comment": "",
-      "command": "click",
-      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_tbSearch",
-      "targets": [
-        ["id=ctl00_ContentPlaceHolder_mboBookSearch_tbSearch", "id"],
-        ["name=ctl00$ContentPlaceHolder$mboBookSearch$tbSearch", "name"],
-        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_tbSearch", "css:finder"],
-        ["xpath=//input[@id='ctl00_ContentPlaceHolder_mboBookSearch_tbSearch']", "xpath:attributes"],
-        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_divSearchSort']/input", "xpath:idRelative"],
-        ["xpath=//td[2]/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "551e1cfb-fc8b-4db2-bc14-6b22921e4d39",
-      "comment": "",
-      "command": "store",
-      "target": "A Sharp Combination",
-      "targets": [],
-      "value": "title"
-    }, {
-      "id": "9f000a75-722f-4049-b944-d33e09461b2d",
+      "id": "48987e7e-32d0-4dfd-b123-a41bf1317d29",
       "comment": "",
       "command": "type",
-      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_tbSearch",
+      "target": "name=q",
       "targets": [
-        ["id=ctl00_ContentPlaceHolder_mboBookSearch_tbSearch", "id"],
-        ["name=ctl00$ContentPlaceHolder$mboBookSearch$tbSearch", "name"],
-        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_tbSearch", "css:finder"],
-        ["xpath=//input[@id='ctl00_ContentPlaceHolder_mboBookSearch_tbSearch']", "xpath:attributes"],
-        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_divSearchSort']/input", "xpath:idRelative"],
-        ["xpath=//td[2]/div/input", "xpath:position"]
+        ["name=q", "name"],
+        ["css=#nav_search_form > .form-control", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form[@id='nav_search_form']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
       ],
-      "value": " Testing of web based systems"
+      "value": "lenovo"
     }, {
-      "id": "b7deed5b-fc8e-4a71-827e-adb2827c5387",
+      "id": "81687453-48e6-4855-926e-2d60ecd6dd23",
       "comment": "",
       "command": "click",
-      "target": "id=ctl00_ContentPlaceHolder_mboBookSearch_btnSearch",
+      "target": "css=#searchbtn > .fa",
       "targets": [
-        ["id=ctl00_ContentPlaceHolder_mboBookSearch_btnSearch", "id"],
-        ["name=ctl00$ContentPlaceHolder$mboBookSearch$btnSearch", "name"],
-        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_btnSearch", "css:finder"],
-        ["xpath=//input[@id='ctl00_ContentPlaceHolder_mboBookSearch_btnSearch']", "xpath:attributes"],
-        ["xpath=//div[@id='ctl00_ContentPlaceHolder_mboBookSearch_divSearchSort']/input[2]", "xpath:idRelative"],
-        ["xpath=//td[2]/div/input[2]", "xpath:position"]
+        ["css=#searchbtn > .fa", "css:finder"],
+        ["xpath=//button[@id='searchbtn']/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "8bde99de-23a7-4bc5-a3d2-52187b02d67e",
       "comment": "",
       "command": "waitForElementPresent",
-      "target": "css=#ctl00_ContentPlaceHolder_mboBookSearch_lvBooks_ctrl0_tableRow table",
+      "target": "css=.col-xxl-3:nth-child(1) .unveil",
       "targets": [
-        ["css=#ctl00_ContentPlaceHolder_mboBookSearch_lvBooks_ctrl0_tableRow table", "css:finder"],
-        ["xpath=//tr[@id='ctl00_ContentPlaceHolder_mboBookSearch_lvBooks_ctrl0_tableRow']/td/table", "xpath:idRelative"],
-        ["xpath=//td[2]/table/tbody/tr/td/table", "xpath:position"]
+        ["css=.col-xxl-3:nth-child(1) .unveil", "css:finder"],
+        ["xpath=//img[@alt='Зарядно устройство Lenovo Travel на супер цени']", "xpath:img"],
+        ["xpath=//div[@id='ajax_content']/div[2]/div[2]/div/div/div/div/a/div/img", "xpath:idRelative"],
+        ["xpath=//a/div/img", "xpath:position"]
       ],
-      "value": "1000"
+      "value": "1"
     }, {
       "id": "2bc0a94a-e5fc-4d89-92a4-234927415079",
       "comment": "",
       "command": "verifyElementPresent",
-      "target": "css=#ctl00_ContentPlaceHolder_mboBookSearch_lvBooks_ctrl0_tableRow table",
-      "targets": [],
+      "target": "css=.col-xxl-3:nth-child(1) .unveil",
+      "targets": [
+        ["css=.col-xxl-3:nth-child(1) .unveil", "css:finder"],
+        ["xpath=//img[@alt='Зарядно устройство Lenovo Travel на супер цени']", "xpath:img"],
+        ["xpath=//div[@id='ajax_content']/div[2]/div[2]/div/div/div/div/a/div/img", "xpath:idRelative"],
+        ["xpath=//a/div/img", "xpath:position"]
+      ],
       "value": ""
     }]
   }],
