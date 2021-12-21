@@ -1,0 +1,1091 @@
+{
+  "id": "48ee8c66-06e0-47e9-a23c-45375f800e4f",
+  "version": "2.0",
+  "name": "62393",
+  "url": "https://www.bdz.bg",
+  "tests": [{
+    "id": "def88299-95dc-4cf6-9f5d-d414eea960b9",
+    "name": "TestTrainScheduleWithDepartingDate",
+    "commands": [{
+      "id": "2e80c87c-7c63-4b17-8b55-199ddd60b08c",
+      "comment": "",
+      "command": "open",
+      "target": "/bg",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bfebfd15-d6ef-4c2f-80bb-00310a755ef9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a8799cd4-7bc6-4be9-a82a-d7cc409720d5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(1) span",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div/a/span", "xpath:idRelative"],
+        ["xpath=//nav/div/div/div/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "10a00cc3-76f4-4092-a523-0018bfe73c4e",
+      "comment": "",
+      "command": "click",
+      "target": "id=from",
+      "targets": [
+        ["id=from", "id"],
+        ["name=from", "name"],
+        ["css=#from", "css:finder"],
+        ["xpath=//input[@id='from']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dda92897-4fbc-4b89-866c-993be8aad3d9",
+      "comment": "",
+      "command": "type",
+      "target": "id=from",
+      "targets": [
+        ["id=from", "id"],
+        ["name=from", "name"],
+        ["css=#from", "css:finder"],
+        ["xpath=//input[@id='from']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "София"
+    }, {
+      "id": "f790aaa8-b018-4603-84f6-a3407a1bd9ce",
+      "comment": "",
+      "command": "storeValue",
+      "target": "id=from",
+      "targets": [
+        ["id=from", "id"],
+        ["name=from", "name"],
+        ["css=#from", "css:finder"],
+        ["xpath=//input[@id='from']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "depart"
+    }, {
+      "id": "64fe3a54-20a1-4e40-89f0-1a36307aca58",
+      "comment": "",
+      "command": "click",
+      "target": "id=to",
+      "targets": [
+        ["id=to", "id"],
+        ["name=to", "name"],
+        ["css=#to", "css:finder"],
+        ["xpath=//input[@id='to']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5bdf862-3b31-4c54-9704-a3055224a1ed",
+      "comment": "",
+      "command": "type",
+      "target": "id=to",
+      "targets": [
+        ["id=to", "id"],
+        ["name=to", "name"],
+        ["css=#to", "css:finder"],
+        ["xpath=//input[@id='to']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Видин"
+    }, {
+      "id": "3b197c9f-a8f2-4300-bfdd-8a5892b0735e",
+      "comment": "",
+      "command": "storeValue",
+      "target": "id=to",
+      "targets": [
+        ["id=to", "id"],
+        ["name=to", "name"],
+        ["css=#to", "css:finder"],
+        ["xpath=//input[@id='to']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "arrival"
+    }, {
+      "id": "697dd4f6-6e96-44d0-862a-f2b315c3b567",
+      "comment": "",
+      "command": "storeValue",
+      "target": "id=destination-date",
+      "targets": [],
+      "value": "destDate"
+    }, {
+      "id": "95dcd983-f0cb-41f6-880f-184e7436a5e2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-3",
+      "targets": [
+        ["css=.px-3", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div[4]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Напред')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3fa17d28-d780-4e69-8ada-9ad2d28e83da",
+      "comment": "Assert the title is correct",
+      "command": "assertTitle",
+      "target": "${depart} - ${arrival}, Разписание на влаковете | БДЖ Пътнически превози",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d33b423-809c-4c33-9310-1243982a2f27",
+      "comment": "Assert there is result displayed",
+      "command": "assertElementPresent",
+      "target": "id=via1",
+      "targets": [
+        ["css=.card:nth-child(9) > .card-body", "css:finder"],
+        ["xpath=//div[@id='content']/div[3]/div[6]/div", "xpath:idRelative"],
+        ["xpath=//div[6]/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f1bd417a-83b1-4341-91c0-4024154a181f",
+    "name": "TestTrainScheduleWithPastDate",
+    "commands": [{
+      "id": "0386591c-b092-408b-8239-2b2f5ae42247",
+      "comment": "",
+      "command": "open",
+      "target": "/bg",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "643df295-4795-4ee2-afcd-10a8ae1c220b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ecee133-b141-4a3f-95ee-3e5e6645eca2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(1) span",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div/a/span", "xpath:idRelative"],
+        ["xpath=//nav/div/div/div/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b676b759-8d6a-44b8-ad10-911319f66cf8",
+      "comment": "",
+      "command": "click",
+      "target": "id=from",
+      "targets": [
+        ["id=from", "id"],
+        ["name=from", "name"],
+        ["css=#from", "css:finder"],
+        ["xpath=//input[@id='from']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9777d231-b98a-4874-a313-6e84e635a577",
+      "comment": "",
+      "command": "type",
+      "target": "id=from",
+      "targets": [
+        ["id=from", "id"],
+        ["name=from", "name"],
+        ["css=#from", "css:finder"],
+        ["xpath=//input[@id='from']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "София"
+    }, {
+      "id": "ec75899a-1317-4f27-8c1e-b72061e16d9e",
+      "comment": "",
+      "command": "storeValue",
+      "target": "id=from",
+      "targets": [
+        ["id=from", "id"],
+        ["name=from", "name"],
+        ["css=#from", "css:finder"],
+        ["xpath=//input[@id='from']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "depart"
+    }, {
+      "id": "a5cfda7c-c048-4a5b-9966-04a8ee35035f",
+      "comment": "",
+      "command": "click",
+      "target": "id=to",
+      "targets": [
+        ["id=to", "id"],
+        ["name=to", "name"],
+        ["css=#to", "css:finder"],
+        ["xpath=//input[@id='to']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "39cafd21-7918-4026-9102-8647bc9c7ff2",
+      "comment": "",
+      "command": "type",
+      "target": "id=to",
+      "targets": [
+        ["id=to", "id"],
+        ["name=to", "name"],
+        ["css=#to", "css:finder"],
+        ["xpath=//input[@id='to']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Видин"
+    }, {
+      "id": "46170442-6b45-4b09-b250-f3049f3f5c96",
+      "comment": "",
+      "command": "storeValue",
+      "target": "id=to",
+      "targets": [
+        ["id=from", "id"],
+        ["name=from", "name"],
+        ["css=#from", "css:finder"],
+        ["xpath=//input[@id='from']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "arrival"
+    }, {
+      "id": "f7ed9fc7-332e-4a61-ae87-df42f876c9b0",
+      "comment": "",
+      "command": "click",
+      "target": "id=destination-date",
+      "targets": [
+        ["id=destination-date", "id"],
+        ["name=date", "name"],
+        ["css=#destination-date", "css:finder"],
+        ["xpath=//input[@id='destination-date']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b94958e-deee-446d-b028-8750ec95d8b8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.datepicker-days .picker-switch",
+      "targets": [
+        ["css=.datepicker-days .picker-switch", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div/div/div/ul/li/div/div/table/thead/tr/th[2]", "xpath:idRelative"],
+        ["xpath=//th[2]", "xpath:position"],
+        ["xpath=//th[contains(.,'декември 2021')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "57a7df40-11b4-49de-b6ec-7ba57c8ea010",
+      "comment": "",
+      "command": "click",
+      "target": "css=.datepicker-months .picker-switch",
+      "targets": [
+        ["css=.datepicker-months .picker-switch", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div/div/div/ul/li/div/div[2]/table/thead/tr/th[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/table/thead/tr/th[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d073bb5-8a33-4cb9-a969-7081401b3766",
+      "comment": "",
+      "command": "click",
+      "target": "css=.year:nth-child(5)",
+      "targets": [
+        ["css=.year:nth-child(5)", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div/div/div/ul/li/div/div[3]/table/tbody/tr/td/span[5]", "xpath:idRelative"],
+        ["xpath=//div[3]/table/tbody/tr/td/span[5]", "xpath:position"],
+        ["xpath=//span[contains(.,'2020')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd74ff13-0836-4a15-92a9-015bbec6cb81",
+      "comment": "",
+      "command": "click",
+      "target": "css=.month:nth-child(12)",
+      "targets": [
+        ["css=.month:nth-child(12)", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div/div/div/ul/li/div/div[2]/table/tbody/tr/td/span[12]", "xpath:idRelative"],
+        ["xpath=//span[12]", "xpath:position"],
+        ["xpath=//span[contains(.,'дек')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "52a58675-bb19-433b-819f-dbb9167200b8",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > .day:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(1) > .day:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div/div/div/ul/li/div/div/table/tbody/tr/td[2]", "xpath:idRelative"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c706daf-55d5-4e25-9591-2cd97f78b8ba",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-3",
+      "targets": [
+        ["css=.px-3", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div[4]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Напред')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "19b1192f-abba-467e-a37a-3928900371b6",
+      "comment": "Assert the title is correct",
+      "command": "assertTitle",
+      "target": "${depart} - ${arrival}, Разписание на влаковете | БДЖ Пътнически превози",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2182ec74-5138-48f2-940e-1975638b3ddb",
+      "comment": "Assert there is no result displayed",
+      "command": "assertElementNotPresent",
+      "target": "id=via1",
+      "targets": [
+        ["css=.card:nth-child(9) > .card-body", "css:finder"],
+        ["xpath=//div[@id='content']/div[3]/div[6]/div", "xpath:idRelative"],
+        ["xpath=//div[6]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1dc8ce3a-6455-4426-9d15-1bb124c4732e",
+      "comment": "Assert there is a message for wrong criteria",
+      "command": "assertElementPresent",
+      "target": "css=.alert-danger:nth-child(3)",
+      "targets": [
+        ["css=.alert-danger:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='content']/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e324a512-d60e-4610-9eb4-d93b34503475",
+      "comment": "Assert the message says \"Няма намерени влакове за избраните от вас критерии.\"",
+      "command": "assertText",
+      "target": "css=.alert-danger:nth-child(3)",
+      "targets": [
+        ["css=.alert-danger:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='content']/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]", "xpath:position"]
+      ],
+      "value": "Няма намерени влакове за избраните от вас критерии."
+    }]
+  }, {
+    "id": "f0dfa593-e2d8-4873-9a5e-2f8c36b095bb",
+    "name": "TestTrainScheduleWithMiddleStationIncorrect",
+    "commands": [{
+      "id": "cce0fa55-5a6b-4379-98b6-eb26e7ba3bc1",
+      "comment": "",
+      "command": "open",
+      "target": "/bg",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "65c80ea7-e827-48dd-a73c-0eef83dd37c5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4a8c9de9-3300-493c-b099-5b12f03b85b5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(1) span",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div/a/span", "xpath:idRelative"],
+        ["xpath=//nav/div/div/div/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f254e5c8-d73f-4aa6-9d40-32cb62cd6e38",
+      "comment": "",
+      "command": "click",
+      "target": "id=from",
+      "targets": [
+        ["id=from", "id"],
+        ["name=from", "name"],
+        ["css=#from", "css:finder"],
+        ["xpath=//input[@id='from']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9377a03d-8833-4b54-8077-884fbda06c62",
+      "comment": "",
+      "command": "type",
+      "target": "id=from",
+      "targets": [
+        ["id=from", "id"],
+        ["name=from", "name"],
+        ["css=#from", "css:finder"],
+        ["xpath=//input[@id='from']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "София"
+    }, {
+      "id": "8871054d-1c1e-48a7-891f-04071dcc3278",
+      "comment": "",
+      "command": "storeValue",
+      "target": "id=from",
+      "targets": [
+        ["id=from", "id"],
+        ["name=from", "name"],
+        ["css=#from", "css:finder"],
+        ["xpath=//input[@id='from']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "depart"
+    }, {
+      "id": "5edc7ea7-5e72-4533-9f1c-84eaf3b7af2e",
+      "comment": "",
+      "command": "click",
+      "target": "id=to",
+      "targets": [
+        ["id=to", "id"],
+        ["name=to", "name"],
+        ["css=#to", "css:finder"],
+        ["xpath=//input[@id='to']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf072182-1459-4adb-8707-6e0a9a22b98e",
+      "comment": "",
+      "command": "type",
+      "target": "id=to",
+      "targets": [
+        ["id=to", "id"],
+        ["name=to", "name"],
+        ["css=#to", "css:finder"],
+        ["xpath=//input[@id='to']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Видин"
+    }, {
+      "id": "aecd561c-0ac7-421e-8fc4-8b85e25a5109",
+      "comment": "",
+      "command": "storeValue",
+      "target": "id=to",
+      "targets": [
+        ["id=to", "id"],
+        ["name=to", "name"],
+        ["css=#to", "css:finder"],
+        ["xpath=//input[@id='to']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "arrival"
+    }, {
+      "id": "117e8d02-0891-4c14-b3f2-09fe02c0ad23",
+      "comment": "",
+      "command": "click",
+      "target": "id=via",
+      "targets": [
+        ["id=via", "id"],
+        ["name=via", "name"],
+        ["css=#via", "css:finder"],
+        ["xpath=//input[@id='via']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8276210e-2e9c-471e-a8e2-93a7a8d5805e",
+      "comment": "",
+      "command": "type",
+      "target": "id=via",
+      "targets": [
+        ["id=via", "id"],
+        ["name=via", "name"],
+        ["css=#via", "css:finder"],
+        ["xpath=//input[@id='via']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "Кърджали"
+    }, {
+      "id": "9a73a355-718f-433c-a417-03bff56cfaaa",
+      "comment": "",
+      "command": "storeValue",
+      "target": "id=destination-date",
+      "targets": [],
+      "value": "destDate"
+    }, {
+      "id": "a9757395-b8d4-4ec5-a800-06676284ea29",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-3",
+      "targets": [
+        ["css=.px-3", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div[4]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Напред')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a11ff37-1eec-46d3-b7e5-7c8c3942ae97",
+      "comment": "Assert the title is correct",
+      "command": "assertTitle",
+      "target": "${depart} - ${arrival}, Разписание на влаковете | БДЖ Пътнически превози",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ab9d8e7c-a006-4630-be1d-404a12b24a42",
+      "comment": "Assert there is no result displayed",
+      "command": "assertElementNotPresent",
+      "target": "id=via1",
+      "targets": [
+        ["css=.card:nth-child(9) > .card-body", "css:finder"],
+        ["xpath=//div[@id='content']/div[3]/div[6]/div", "xpath:idRelative"],
+        ["xpath=//div[6]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09f84687-ab09-4007-8b99-d9c7cdbe355c",
+      "comment": "Assert there is a message for wrong criteria",
+      "command": "assertElementPresent",
+      "target": "css=.alert-danger:nth-child(3)",
+      "targets": [
+        ["css=.alert-danger:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='content']/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3557f2e5-70c6-4bf6-b3d4-ce119c4492e7",
+      "comment": "Assert the message says \"Няма намерени влакове за избраните от вас критерии.\"",
+      "command": "assertText",
+      "target": "css=.alert-danger:nth-child(3)",
+      "targets": [
+        ["css=.alert-danger:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='content']/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]", "xpath:position"]
+      ],
+      "value": "Няма намерени влакове за избраните от вас критерии."
+    }]
+  }, {
+    "id": "33e0c955-0458-4089-b789-da564628f4e7",
+    "name": "TestTrainScheduleWithTrainNumberCorrect",
+    "commands": [{
+      "id": "d1856a85-bbdf-4476-b783-2c6718312b39",
+      "comment": "",
+      "command": "open",
+      "target": "/bg",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0c4e4497-9310-46c5-975d-210a900a88d4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a820681-707a-47f6-9932-2bd5dcd2cb38",
+      "comment": "",
+      "command": "click",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(1) span",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div/a/span", "xpath:idRelative"],
+        ["xpath=//nav/div/div/div/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "240cce34-0a17-46c7-9ef4-5633cfdd2e52",
+      "comment": "",
+      "command": "click",
+      "target": "name=train",
+      "targets": [
+        ["name=train", "name"],
+        ["css=.input-group > .form-control", "css:finder"],
+        ["xpath=//input[@name='train']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div[2]/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "63686144-9c30-47c6-a740-78b18c264aee",
+      "comment": "",
+      "command": "type",
+      "target": "name=train",
+      "targets": [
+        ["name=train", "name"],
+        ["css=.input-group > .form-control", "css:finder"],
+        ["xpath=//input[@name='train']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div[2]/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "7620"
+    }, {
+      "id": "e4a1f4d3-acb9-4d48-af02-35d8a1ceca30",
+      "comment": "",
+      "command": "storeValue",
+      "target": "name=train",
+      "targets": [],
+      "value": "trainNumber"
+    }, {
+      "id": "d0caab30-fbd6-46c2-8b6b-4cd0482627bf",
+      "comment": "",
+      "command": "storeValue",
+      "target": "id=destination-date",
+      "targets": [],
+      "value": "destDate"
+    }, {
+      "id": "0b9ab515-ca48-4a93-a48b-e9aa14a9cb91",
+      "comment": "",
+      "command": "click",
+      "target": "css=.icon-primary",
+      "targets": [
+        ["css=.icon-primary", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "d03ae459-ce5f-4798-ac49-468383fd5913",
+      "comment": "Assert the correct text is displayed",
+      "command": "assertText",
+      "target": "css=.show-schedule-search-form:nth-child(2)",
+      "targets": [],
+      "value": "Информация за влак №${trainNumber}"
+    }]
+  }, {
+    "id": "51860865-87ec-4341-903e-1c22ef4e7a1a",
+    "name": "TestRegistrationFormCorrect",
+    "commands": [{
+      "id": "57467445-d2e2-43ed-9c10-1940e5671fe8",
+      "comment": "",
+      "command": "open",
+      "target": "/bg",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a83e780-fb50-4713-9a74-1683aca745bc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "333d8004-534c-40d1-a8fa-c91b24be0057",
+      "comment": "",
+      "command": "click",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(2) span",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/a/span", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win6629",
+      "windowTimeout": 2000
+    }, {
+      "id": "5c14e325-7998-4640-86ad-6e585160fb71",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win6629}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d41f4c8-35b9-4e21-9aff-59c11dc45f4a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Регистрация",
+      "targets": [
+        ["linkText=Регистрация", "linkText"],
+        ["css=.control-register:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Регистрация')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/register')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cf6f218-5490-4667-b8ea-a07b092c3b13",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=email", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "nqkoisitam@gmail.com"
+    }, {
+      "id": "b38e9d83-3797-491f-a455-6ff41ef8039a",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-first-name",
+      "targets": [
+        ["id=id-first-name", "id"],
+        ["name=firstName", "name"],
+        ["css=#id-first-name", "css:finder"],
+        ["xpath=//input[@id='id-first-name']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "Nqkoi"
+    }, {
+      "id": "af0ac52d-ef07-4f19-ae29-64e38cc7b75d",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-last-name",
+      "targets": [
+        ["id=id-last-name", "id"],
+        ["name=lastName", "name"],
+        ["css=#id-last-name", "css:finder"],
+        ["xpath=//input[@id='id-last-name']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[3]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/input", "xpath:position"]
+      ],
+      "value": "Sitam"
+    }, {
+      "id": "3223eae5-8147-4f67-8aac-a4c9ad0e0494",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-password",
+      "targets": [
+        ["id=id-password", "id"],
+        ["name=password", "name"],
+        ["css=#id-password", "css:finder"],
+        ["xpath=//input[@id='id-password']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/input", "xpath:position"]
+      ],
+      "value": "Parola123"
+    }, {
+      "id": "a8e5c967-dfb5-4861-a9b8-bdf80ea91d14",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-repeat-password",
+      "targets": [
+        ["id=id-repeat-password", "id"],
+        ["name=passwordRepeat", "name"],
+        ["css=#id-repeat-password", "css:finder"],
+        ["xpath=//input[@id='id-repeat-password']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
+      ],
+      "value": "Parola123"
+    }, {
+      "id": "1cbb3215-4851-4daa-8ab6-bea91cf7146a",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-phone",
+      "targets": [
+        ["id=id-phone", "id"],
+        ["name=phone", "name"],
+        ["css=#id-phone", "css:finder"],
+        ["xpath=//input[@id='id-phone']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[6]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/input", "xpath:position"]
+      ],
+      "value": "0880321341"
+    }, {
+      "id": "d64ab441-2c42-4ed7-b26d-8492e38e2f58",
+      "comment": "",
+      "command": "click",
+      "target": "id=id-terms",
+      "targets": [
+        ["id=id-terms", "id"],
+        ["name=termsAccepted", "name"],
+        ["css=#id-terms", "css:finder"],
+        ["xpath=//input[@id='id-terms']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[7]/div/label/input", "xpath:idRelative"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "185b0476-a950-4839-b2eb-3f9a93afe66e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[8]/div/button", "xpath:idRelative"],
+        ["xpath=//div[8]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Регистрация')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8aa51b4-407f-43fd-a160-c7adbe6e6025",
+      "comment": "Assert there is an alert for successful registration",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [],
+      "value": "Вие се регистрирахте успешно в системата."
+    }, {
+      "id": "c55366c6-92f8-4f27-a530-8102aab1e676",
+      "comment": "Assert there is a message, telling you to confirm your email",
+      "command": "assertText",
+      "target": "css=.alert + p",
+      "targets": [],
+      "value": "Моля, проверете електронния си адрес за да потвърдите регистрацията си."
+    }, {
+      "id": "658e0d37-889b-49cc-a9ec-a700e9e972dc",
+      "comment": "Assert there is an \"Ok\" button",
+      "command": "assertElementNotPresent",
+      "target": "linkText=Ok",
+      "targets": [
+        ["linkText=Ok", "linkText"],
+        ["css=.text-center > .btn", "css:finder"],
+        ["xpath=//div[@id='col--left']/div/div/div/div[2]/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/')])[7]", "xpath:href"],
+        ["xpath=//div[2]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'   Ok   ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "762266a2-5071-48a9-b0b7-f42556ba9ff0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ok",
+      "targets": [
+        ["linkText=Ok", "linkText"],
+        ["css=.text-center > .btn", "css:finder"],
+        ["xpath=//div[@id='col--left']/div/div/div/div[2]/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/')])[7]", "xpath:href"],
+        ["xpath=//div/div[2]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'   Ok   ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6bb65e5-9ddd-42f2-bfee-83977688eac9",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.document.URL",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "9d4b7f49-3c2a-4062-9372-57a0e87220ca",
+      "comment": "",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://bileti.bdz.bg/"
+    }]
+  }, {
+    "id": "e95708f8-df5e-4a0f-86cd-808d9d54dd97",
+    "name": "TestRegistrationFormIncorrectLastName",
+    "commands": [{
+      "id": "e46dee66-434b-4aae-872e-0ff88731f039",
+      "comment": "",
+      "command": "open",
+      "target": "/bg",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3955103e-b7ed-4087-804e-07c65dee5401",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "419f7b5c-1c9b-4b4b-b4a9-e7e77acace04",
+      "comment": "",
+      "command": "click",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(2) span",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/a/span", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win6629",
+      "windowTimeout": 2000
+    }, {
+      "id": "dd3b543e-4c32-4787-9f48-b83958b4e52c",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win6629}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e971adf-b7de-45ec-ab4b-d981e8fb4917",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Регистрация",
+      "targets": [
+        ["linkText=Регистрация", "linkText"],
+        ["css=.control-register:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Регистрация')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/register')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9f1b988-c765-4bdf-9db2-3dd1ddb9dc4d",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=email", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "nqkoisitam@gmail.com"
+    }, {
+      "id": "507c326f-03e8-46fa-a9d7-cca97d7f3c0b",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-first-name",
+      "targets": [
+        ["id=id-first-name", "id"],
+        ["name=firstName", "name"],
+        ["css=#id-first-name", "css:finder"],
+        ["xpath=//input[@id='id-first-name']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "Nqkoi"
+    }, {
+      "id": "f654ea75-c9da-4c6e-8879-46a6d388bf2e",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-last-name",
+      "targets": [
+        ["id=id-last-name", "id"],
+        ["name=lastName", "name"],
+        ["css=#id-last-name", "css:finder"],
+        ["xpath=//input[@id='id-last-name']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[3]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/input", "xpath:position"]
+      ],
+      "value": "S"
+    }, {
+      "id": "e90fa9cc-6e04-41b2-bc90-1251c4213691",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-password",
+      "targets": [
+        ["id=id-password", "id"],
+        ["name=password", "name"],
+        ["css=#id-password", "css:finder"],
+        ["xpath=//input[@id='id-password']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/input", "xpath:position"]
+      ],
+      "value": "Parola123"
+    }, {
+      "id": "63b119ce-4545-42e3-aad0-3110d3faed85",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-repeat-password",
+      "targets": [
+        ["id=id-repeat-password", "id"],
+        ["name=passwordRepeat", "name"],
+        ["css=#id-repeat-password", "css:finder"],
+        ["xpath=//input[@id='id-repeat-password']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
+      ],
+      "value": "Parola123"
+    }, {
+      "id": "c1aaf5e2-0456-4fbe-a246-2210799e86f2",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-phone",
+      "targets": [
+        ["id=id-phone", "id"],
+        ["name=phone", "name"],
+        ["css=#id-phone", "css:finder"],
+        ["xpath=//input[@id='id-phone']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[6]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/input", "xpath:position"]
+      ],
+      "value": "0880321341"
+    }, {
+      "id": "39c0b281-44b3-42c3-8127-3a5e4cd54a3c",
+      "comment": "",
+      "command": "click",
+      "target": "id=id-terms",
+      "targets": [
+        ["id=id-terms", "id"],
+        ["name=termsAccepted", "name"],
+        ["css=#id-terms", "css:finder"],
+        ["xpath=//input[@id='id-terms']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[7]/div/label/input", "xpath:idRelative"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "efcb5cb2-971b-489c-96d3-191d03a97e9d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[8]/div/button", "xpath:idRelative"],
+        ["xpath=//div[8]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Регистрация')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac02646f-4bd6-452a-a332-db0aa584a781",
+      "comment": "Assert there is an alert message",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [],
+      "value": "Дължината на фамилното име трябва да е между 2 и 50 символа."
+    }]
+  }],
+  "suites": [{
+    "id": "34cce664-0b68-4e97-8159-27d0c387f888",
+    "name": "TrainSchedule",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["def88299-95dc-4cf6-9f5d-d414eea960b9", "f1bd417a-83b1-4341-91c0-4024154a181f", "f0dfa593-e2d8-4873-9a5e-2f8c36b095bb", "33e0c955-0458-4089-b789-da564628f4e7"]
+  }, {
+    "id": "aade498e-4ec2-4263-839c-614b57a4742e",
+    "name": "RegistrationForm",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["51860865-87ec-4341-903e-1c22ef4e7a1a", "e95708f8-df5e-4a0f-86cd-808d9d54dd97"]
+  }],
+  "urls": ["https://www.bdz.bg/"],
+  "plugins": []
+}
