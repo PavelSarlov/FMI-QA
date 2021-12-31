@@ -2,15 +2,15 @@
   "id": "48ee8c66-06e0-47e9-a23c-45375f800e4f",
   "version": "2.0",
   "name": "62393",
-  "url": "https://www.bdz.bg",
+  "url": "https://www.bdz.bg/",
   "tests": [{
     "id": "def88299-95dc-4cf6-9f5d-d414eea960b9",
-    "name": "TestTrainScheduleWithDepartingDate",
+    "name": "TestTimetableWithDepartingDate",
     "commands": [{
       "id": "2e80c87c-7c63-4b17-8b55-199ddd60b08c",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://razpisanie.bdz.bg",
       "targets": [],
       "value": ""
     }, {
@@ -21,28 +21,25 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "a8799cd4-7bc6-4be9-a82a-d7cc409720d5",
-      "comment": "",
-      "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(1) span",
+      "id": "dbb46654-38b0-4078-9e09-726822143937",
+      "comment": "Assert there is a from-to form",
+      "command": "assertElementPresent",
+      "target": "css=.card-body:nth-child(2)",
       "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(1) span", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div/a/span", "xpath:idRelative"],
-        ["xpath=//nav/div/div/div/a/span", "xpath:position"]
+        ["css=.card-body:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "10a00cc3-76f4-4092-a523-0018bfe73c4e",
-      "comment": "",
-      "command": "click",
-      "target": "id=from",
+      "id": "7e90d545-3fa5-47b7-a6bc-eb382f143427",
+      "comment": "Assert there is a form for options",
+      "command": "assertElementPresent",
+      "target": "css=.pt-0",
       "targets": [
-        ["id=from", "id"],
-        ["name=from", "name"],
-        ["css=#from", "css:finder"],
-        ["xpath=//input[@id='from']", "xpath:attributes"],
-        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div/input", "xpath:position"]
+        ["css=.pt-0", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -73,20 +70,6 @@
         ["xpath=//div/input", "xpath:position"]
       ],
       "value": "depart"
-    }, {
-      "id": "64fe3a54-20a1-4e40-89f0-1a36307aca58",
-      "comment": "",
-      "command": "click",
-      "target": "id=to",
-      "targets": [
-        ["id=to", "id"],
-        ["name=to", "name"],
-        ["css=#to", "css:finder"],
-        ["xpath=//input[@id='to']", "xpath:attributes"],
-        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": ""
     }, {
       "id": "c5bdf862-3b31-4c54-9704-a3055224a1ed",
       "comment": "",
@@ -123,6 +106,19 @@
       "targets": [],
       "value": "destDate"
     }, {
+      "id": "d22aaaba-6ef6-43e2-8553-7158572e3797",
+      "comment": "Assert there is a submit button \"Напред\"",
+      "command": "assertElementPresent",
+      "target": "css=.px-3",
+      "targets": [
+        ["css=.px-3", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div[4]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Напред')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
       "id": "95dcd983-f0cb-41f6-880f-184e7436a5e2",
       "comment": "",
       "command": "click",
@@ -142,26 +138,15 @@
       "target": "${depart} - ${arrival}, Разписание на влаковете | БДЖ Пътнически превози",
       "targets": [],
       "value": ""
-    }, {
-      "id": "1d33b423-809c-4c33-9310-1243982a2f27",
-      "comment": "Assert there is result displayed",
-      "command": "assertElementPresent",
-      "target": "id=via1",
-      "targets": [
-        ["css=.card:nth-child(9) > .card-body", "css:finder"],
-        ["xpath=//div[@id='content']/div[3]/div[6]/div", "xpath:idRelative"],
-        ["xpath=//div[6]/div", "xpath:position"]
-      ],
-      "value": ""
     }]
   }, {
     "id": "f1bd417a-83b1-4341-91c0-4024154a181f",
-    "name": "TestTrainScheduleWithPastDate",
+    "name": "TestTimetableWithPastDate",
     "commands": [{
       "id": "0386591c-b092-408b-8239-2b2f5ae42247",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://razpisanie.bdz.bg",
       "targets": [],
       "value": ""
     }, {
@@ -172,28 +157,25 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "0ecee133-b141-4a3f-95ee-3e5e6645eca2",
-      "comment": "",
-      "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(1) span",
+      "id": "d776a916-4842-4dfa-b9e9-887898fb772b",
+      "comment": "Assert there is a from-to form",
+      "command": "assertElementPresent",
+      "target": "css=.card-body:nth-child(2)",
       "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(1) span", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div/a/span", "xpath:idRelative"],
-        ["xpath=//nav/div/div/div/a/span", "xpath:position"]
+        ["css=.card-body:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "b676b759-8d6a-44b8-ad10-911319f66cf8",
-      "comment": "",
-      "command": "click",
-      "target": "id=from",
+      "id": "9ab6a234-7fad-464a-aecd-81fe3291b029",
+      "comment": "Assert there is a form for options",
+      "command": "assertElementPresent",
+      "target": "css=.pt-0",
       "targets": [
-        ["id=from", "id"],
-        ["name=from", "name"],
-        ["css=#from", "css:finder"],
-        ["xpath=//input[@id='from']", "xpath:attributes"],
-        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div/input", "xpath:position"]
+        ["css=.pt-0", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -224,20 +206,6 @@
         ["xpath=//div/input", "xpath:position"]
       ],
       "value": "depart"
-    }, {
-      "id": "a5cfda7c-c048-4a5b-9966-04a8ee35035f",
-      "comment": "",
-      "command": "click",
-      "target": "id=to",
-      "targets": [
-        ["id=to", "id"],
-        ["name=to", "name"],
-        ["css=#to", "css:finder"],
-        ["xpath=//input[@id='to']", "xpath:attributes"],
-        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": ""
     }, {
       "id": "39cafd21-7918-4026-9102-8647bc9c7ff2",
       "comment": "",
@@ -278,6 +246,17 @@
         ["xpath=//input[@id='destination-date']", "xpath:attributes"],
         ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dcb20f4b-26c8-4ee5-96f5-aa63344fa999",
+      "comment": "Assert there is a date-picker menu",
+      "command": "assertElementPresent",
+      "target": "css=.bootstrap-datetimepicker-widget",
+      "targets": [
+        ["css=.bootstrap-datetimepicker-widget", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -340,6 +319,19 @@
       ],
       "value": ""
     }, {
+      "id": "e143ca86-406d-4955-a6a0-dafc7ec50cd3",
+      "comment": "Assert there is a submit button \"Напред\"",
+      "command": "assertElementPresent",
+      "target": "css=.px-3",
+      "targets": [
+        ["css=.px-3", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div[4]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Напред')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
       "id": "7c706daf-55d5-4e25-9591-2cd97f78b8ba",
       "comment": "",
       "command": "click",
@@ -395,12 +387,12 @@
     }]
   }, {
     "id": "f0dfa593-e2d8-4873-9a5e-2f8c36b095bb",
-    "name": "TestTrainScheduleWithMiddleStationIncorrect",
+    "name": "TestTimetableWithMiddleStationIncorrect",
     "commands": [{
       "id": "cce0fa55-5a6b-4379-98b6-eb26e7ba3bc1",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://razpisanie.bdz.bg",
       "targets": [],
       "value": ""
     }, {
@@ -411,28 +403,25 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "4a8c9de9-3300-493c-b099-5b12f03b85b5",
-      "comment": "",
-      "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(1) span",
+      "id": "3dd043ac-d65d-4ef0-b5eb-74cd7b472e64",
+      "comment": "Assert there is a from-to form",
+      "command": "assertElementPresent",
+      "target": "css=.card-body:nth-child(2)",
       "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(1) span", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div/a/span", "xpath:idRelative"],
-        ["xpath=//nav/div/div/div/a/span", "xpath:position"]
+        ["css=.card-body:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "f254e5c8-d73f-4aa6-9d40-32cb62cd6e38",
-      "comment": "",
-      "command": "click",
-      "target": "id=from",
+      "id": "86ad9671-a207-449f-b23b-acc0ef96fd99",
+      "comment": "Assert there is a form for options",
+      "command": "assertElementPresent",
+      "target": "css=.pt-0",
       "targets": [
-        ["id=from", "id"],
-        ["name=from", "name"],
-        ["css=#from", "css:finder"],
-        ["xpath=//input[@id='from']", "xpath:attributes"],
-        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div/input", "xpath:position"]
+        ["css=.pt-0", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -464,20 +453,6 @@
       ],
       "value": "depart"
     }, {
-      "id": "5edc7ea7-5e72-4533-9f1c-84eaf3b7af2e",
-      "comment": "",
-      "command": "click",
-      "target": "id=to",
-      "targets": [
-        ["id=to", "id"],
-        ["name=to", "name"],
-        ["css=#to", "css:finder"],
-        ["xpath=//input[@id='to']", "xpath:attributes"],
-        ["xpath=//form[@id='razpisanieTable']/div/div[2]/div/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "cf072182-1459-4adb-8707-6e0a9a22b98e",
       "comment": "",
       "command": "type",
@@ -506,20 +481,6 @@
       ],
       "value": "arrival"
     }, {
-      "id": "117e8d02-0891-4c14-b3f2-09fe02c0ad23",
-      "comment": "",
-      "command": "click",
-      "target": "id=via",
-      "targets": [
-        ["id=via", "id"],
-        ["name=via", "name"],
-        ["css=#via", "css:finder"],
-        ["xpath=//input[@id='via']", "xpath:attributes"],
-        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div[2]/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "8276210e-2e9c-471e-a8e2-93a7a8d5805e",
       "comment": "",
       "command": "type",
@@ -540,6 +501,19 @@
       "target": "id=destination-date",
       "targets": [],
       "value": "destDate"
+    }, {
+      "id": "31418c03-a586-4409-ba55-fd16d2f5de6b",
+      "comment": "Assert there is a submit button \"Напред\"",
+      "command": "assertElementPresent",
+      "target": "css=.px-3",
+      "targets": [
+        ["css=.px-3", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div/div[4]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Напред')]", "xpath:innerText"]
+      ],
+      "value": ""
     }, {
       "id": "a9757395-b8d4-4ec5-a800-06676284ea29",
       "comment": "",
@@ -596,12 +570,12 @@
     }]
   }, {
     "id": "33e0c955-0458-4089-b789-da564628f4e7",
-    "name": "TestTrainScheduleWithTrainNumberCorrect",
+    "name": "TestTimetableWithTrainNumberCorrect",
     "commands": [{
       "id": "d1856a85-bbdf-4476-b783-2c6718312b39",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://razpisanie.bdz.bg",
       "targets": [],
       "value": ""
     }, {
@@ -612,27 +586,25 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "7a820681-707a-47f6-9932-2bd5dcd2cb38",
-      "comment": "",
-      "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(1) span",
+      "id": "2ffbc30a-839d-4b05-b4bf-39535acda113",
+      "comment": "Assert there is a from-to form",
+      "command": "assertElementPresent",
+      "target": "css=.card-body:nth-child(2)",
       "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(1) span", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div/a/span", "xpath:idRelative"],
-        ["xpath=//nav/div/div/div/a/span", "xpath:position"]
+        ["css=.card-body:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "240cce34-0a17-46c7-9ef4-5633cfdd2e52",
-      "comment": "",
-      "command": "click",
-      "target": "name=train",
+      "id": "594b44a0-ad3a-4509-b784-ad9381eb529f",
+      "comment": "Assert there is a form for options",
+      "command": "assertElementPresent",
+      "target": "css=.pt-0",
       "targets": [
-        ["name=train", "name"],
-        ["css=.input-group > .form-control", "css:finder"],
-        ["xpath=//input[@name='train']", "xpath:attributes"],
-        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div[2]/div[3]/div/input", "xpath:idRelative"],
-        ["xpath=//div[3]/div/input", "xpath:position"]
+        ["css=.pt-0", "css:finder"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -663,6 +635,20 @@
       "targets": [],
       "value": "destDate"
     }, {
+      "id": "7d2c5023-b053-4746-a9d6-d1f0ce9fd511",
+      "comment": "Assert there is a button to submit",
+      "command": "assertElementPresent",
+      "target": "id=trainSearchButton",
+      "targets": [
+        ["id=trainSearchButton", "id"],
+        ["css=#trainSearchButton", "css:finder"],
+        ["xpath=//button[@id='trainSearchButton']", "xpath:attributes"],
+        ["xpath=//form[@id='razpisanieTable']/div[2]/div/div[2]/div[3]/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Търсене по номер на влак')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
       "id": "0b9ab515-ca48-4a93-a48b-e9aa14a9cb91",
       "comment": "",
       "command": "click",
@@ -678,6 +664,17 @@
       "target": "css=.show-schedule-search-form:nth-child(2)",
       "targets": [],
       "value": "Информация за влак №${trainNumber}"
+    }, {
+      "id": "a4778d50-6640-4898-a49e-7fb5418e4ad5",
+      "comment": "Assert there is a result timetable",
+      "command": "assertElementPresent",
+      "target": "css=.bg-white",
+      "targets": [
+        ["css=.bg-white", "css:finder"],
+        ["xpath=//div[@id='content']/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[6]/div[3]/div", "xpath:position"]
+      ],
+      "value": ""
     }]
   }, {
     "id": "51860865-87ec-4341-903e-1c22ef4e7a1a",
@@ -686,7 +683,7 @@
       "id": "57467445-d2e2-43ed-9c10-1940e5671fe8",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://bileti.bdz.bg/",
       "targets": [],
       "value": ""
     }, {
@@ -697,25 +694,58 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "333d8004-534c-40d1-a8fa-c91b24be0057",
+      "id": "a0ed0198-a4c5-43c2-9657-45d909783839",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "//node()[@class=\"control-login\"]",
+      "targets": [],
+      "value": "userNotLogged"
+    }, {
+      "id": "1550d6d2-68cd-45e2-ae03-5fb29856bb16",
+      "comment": "",
+      "command": "if",
+      "target": "${userNotLogged} == 0",
+      "targets": [
+        ["linkText=Вход", "linkText"],
+        ["css=#header-controls > .control-login", "css:finder"],
+        ["xpath=(//a[contains(text(),'Вход')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/login')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6ddfd58-eba1-4715-8662-9beeeab1f666",
       "comment": "",
       "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(2) span",
+      "target": "css=.control-exit-profile:nth-child(2)",
       "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(2) span", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div[2]/a/span", "xpath:idRelative"],
-        ["xpath=//div[2]/a/span", "xpath:position"]
+        ["css=.control-exit-profile:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='header-controls']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"]
       ],
-      "value": "",
-      "opensWindow": true,
-      "windowHandleName": "win6629",
-      "windowTimeout": 2000
+      "value": ""
     }, {
-      "id": "5c14e325-7998-4640-86ad-6e585160fb71",
+      "id": "affd1450-d915-4af6-a390-c50f5b3dbe09",
       "comment": "",
-      "command": "selectWindow",
-      "target": "handle=${win6629}",
+      "command": "end",
+      "target": "",
       "targets": [],
+      "value": ""
+    }, {
+      "id": "029f0af6-1feb-4c96-8d32-0f23660e81c2",
+      "comment": "Assert there is a register link",
+      "command": "assertElementPresent",
+      "target": "linkText=Регистрация",
+      "targets": [
+        ["linkText=Регистрация", "linkText"],
+        ["css=.control-register:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Регистрация')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/register')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
       "value": ""
     }, {
       "id": "8d41f4c8-35b9-4e21-9aff-59c11dc45f4a",
@@ -732,6 +762,24 @@
       ],
       "value": ""
     }, {
+      "id": "98d1bb3e-2718-48cf-bf8e-aa00eae0784a",
+      "comment": "Assert the registration form is displayed",
+      "command": "assertElementPresent",
+      "target": "css=.panel-default > .panel-body",
+      "targets": [
+        ["css=.panel-default > .panel-body", "css:finder"],
+        ["xpath=//div[@id='col--left']/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56adf89f-f690-4441-bb2c-a0c703630b1e",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return Math.random().toString(36).replace(\"/\\w+/g\", \"\").substring(2, 10)",
+      "targets": [],
+      "value": "randomString"
+    }, {
       "id": "4cf6f218-5490-4667-b8ea-a07b092c3b13",
       "comment": "",
       "command": "type",
@@ -744,7 +792,7 @@
         ["xpath=//form[@id='register-form']/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "nqkoisitam@gmail.com"
+      "value": "${randomString}@gmail.com"
     }, {
       "id": "b38e9d83-3797-491f-a455-6ff41ef8039a",
       "comment": "",
@@ -758,7 +806,7 @@
         ["xpath=//form[@id='register-form']/div[2]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/input", "xpath:position"]
       ],
-      "value": "Nqkoi"
+      "value": "${randomString}"
     }, {
       "id": "af0ac52d-ef07-4f19-ae29-64e38cc7b75d",
       "comment": "",
@@ -772,7 +820,7 @@
         ["xpath=//form[@id='register-form']/div[3]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[3]/div/div/input", "xpath:position"]
       ],
-      "value": "Sitam"
+      "value": "${randomString}"
     }, {
       "id": "3223eae5-8147-4f67-8aac-a4c9ad0e0494",
       "comment": "",
@@ -786,7 +834,7 @@
         ["xpath=//form[@id='register-form']/div[4]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[4]/div/div/input", "xpath:position"]
       ],
-      "value": "Parola123"
+      "value": "${randomString}"
     }, {
       "id": "a8e5c967-dfb5-4861-a9b8-bdf80ea91d14",
       "comment": "",
@@ -800,7 +848,7 @@
         ["xpath=//form[@id='register-form']/div[5]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[5]/div/div/input", "xpath:position"]
       ],
-      "value": "Parola123"
+      "value": "${randomString}"
     }, {
       "id": "1cbb3215-4851-4daa-8ab6-bea91cf7146a",
       "comment": "",
@@ -893,7 +941,7 @@
       "value": "url"
     }, {
       "id": "9d4b7f49-3c2a-4062-9372-57a0e87220ca",
-      "comment": "",
+      "comment": "Assert redirection to index",
       "command": "assert",
       "target": "url",
       "targets": [],
@@ -906,7 +954,7 @@
       "id": "e46dee66-434b-4aae-872e-0ff88731f039",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://bileti.bdz.bg/",
       "targets": [],
       "value": ""
     }, {
@@ -917,25 +965,58 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "419f7b5c-1c9b-4b4b-b4a9-e7e77acace04",
+      "id": "0b98d884-615d-4dca-bb22-fe912ed9262a",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "//node()[@class=\"control-login\"]",
+      "targets": [],
+      "value": "userNotLogged"
+    }, {
+      "id": "f3668e74-1f86-416d-b762-395489b25571",
+      "comment": "",
+      "command": "if",
+      "target": "${userNotLogged} == 0",
+      "targets": [
+        ["linkText=Вход", "linkText"],
+        ["css=#header-controls > .control-login", "css:finder"],
+        ["xpath=(//a[contains(text(),'Вход')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/login')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9736c7c-8a6c-4ee6-820d-298397a2ebd0",
       "comment": "",
       "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(2) span",
+      "target": "css=.control-exit-profile:nth-child(2)",
       "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(2) span", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div[2]/a/span", "xpath:idRelative"],
-        ["xpath=//div[2]/a/span", "xpath:position"]
+        ["css=.control-exit-profile:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='header-controls']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"]
       ],
-      "value": "",
-      "opensWindow": true,
-      "windowHandleName": "win6629",
-      "windowTimeout": 2000
+      "value": ""
     }, {
-      "id": "dd3b543e-4c32-4787-9f48-b83958b4e52c",
+      "id": "a29afbc5-e3bf-49b4-954c-ae2d8dab47d2",
       "comment": "",
-      "command": "selectWindow",
-      "target": "handle=${win6629}",
+      "command": "end",
+      "target": "",
       "targets": [],
+      "value": ""
+    }, {
+      "id": "eef2a857-c7f2-490f-a250-ac76497c1c39",
+      "comment": "Assert there is a register link",
+      "command": "assertElementPresent",
+      "target": "linkText=Регистрация",
+      "targets": [
+        ["linkText=Регистрация", "linkText"],
+        ["css=.control-register:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Регистрация')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/register')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
       "value": ""
     }, {
       "id": "8e971adf-b7de-45ec-ab4b-d981e8fb4917",
@@ -952,6 +1033,24 @@
       ],
       "value": ""
     }, {
+      "id": "1fab9dce-96e1-4842-8691-96cb0eb18ef8",
+      "comment": "Assert the registration form is displayed",
+      "command": "assertElementPresent",
+      "target": "css=.panel-default > .panel-body",
+      "targets": [
+        ["css=.panel-default > .panel-body", "css:finder"],
+        ["xpath=//div[@id='col--left']/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "29792e57-f075-4db8-98f9-6ce813baa9d4",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return Math.random().toString(36).replace(\"/\\w+/g\", \"\").substring(2, 10)",
+      "targets": [],
+      "value": "randomString"
+    }, {
       "id": "f9f1b988-c765-4bdf-9db2-3dd1ddb9dc4d",
       "comment": "",
       "command": "type",
@@ -964,7 +1063,7 @@
         ["xpath=//form[@id='register-form']/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "nqkoisitam@gmail.com"
+      "value": "${randomString}@gmail.com"
     }, {
       "id": "507c326f-03e8-46fa-a9d7-cca97d7f3c0b",
       "comment": "",
@@ -978,7 +1077,7 @@
         ["xpath=//form[@id='register-form']/div[2]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/input", "xpath:position"]
       ],
-      "value": "Nqkoi"
+      "value": "${randomString}"
     }, {
       "id": "f654ea75-c9da-4c6e-8879-46a6d388bf2e",
       "comment": "",
@@ -1006,7 +1105,7 @@
         ["xpath=//form[@id='register-form']/div[4]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[4]/div/div/input", "xpath:position"]
       ],
-      "value": "Parola123"
+      "value": "${randomString}"
     }, {
       "id": "63b119ce-4545-42e3-aad0-3110d3faed85",
       "comment": "",
@@ -1020,7 +1119,7 @@
         ["xpath=//form[@id='register-form']/div[5]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[5]/div/div/input", "xpath:position"]
       ],
-      "value": "Parola123"
+      "value": "${randomString}"
     }, {
       "id": "c1aaf5e2-0456-4fbe-a246-2210799e86f2",
       "comment": "",
@@ -1077,7 +1176,7 @@
       "id": "8f31f634-2b66-45dd-b5f7-23b7bf2cef27",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://bileti.bdz.bg/",
       "targets": [],
       "value": ""
     }, {
@@ -1088,25 +1187,58 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "80bdf880-2ded-40b8-82bd-db57a78b3d29",
+      "id": "f231990c-d287-4d14-9b6e-fc8249d17a9b",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "//node()[@class=\"control-login\"]",
+      "targets": [],
+      "value": "userNotLogged"
+    }, {
+      "id": "3d774585-c947-406d-8d7d-f7bf9c5bc3a4",
+      "comment": "",
+      "command": "if",
+      "target": "${userNotLogged} == 0",
+      "targets": [
+        ["linkText=Вход", "linkText"],
+        ["css=#header-controls > .control-login", "css:finder"],
+        ["xpath=(//a[contains(text(),'Вход')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/login')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b024486a-4622-49d4-a66f-2193f675a881",
       "comment": "",
       "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(2) span",
+      "target": "css=.control-exit-profile:nth-child(2)",
       "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(2) span", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div[2]/a/span", "xpath:idRelative"],
-        ["xpath=//div[2]/a/span", "xpath:position"]
+        ["css=.control-exit-profile:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='header-controls']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"]
       ],
-      "value": "",
-      "opensWindow": true,
-      "windowHandleName": "win6629",
-      "windowTimeout": 2000
+      "value": ""
     }, {
-      "id": "1cee1672-cbf5-4c21-b45b-af191d8b2465",
+      "id": "d70641b1-c8d6-4926-9209-c68d7333b588",
       "comment": "",
-      "command": "selectWindow",
-      "target": "handle=${win6629}",
+      "command": "end",
+      "target": "",
       "targets": [],
+      "value": ""
+    }, {
+      "id": "973dfa21-209b-48c2-9221-a305c2bfaada",
+      "comment": "Assert there is a register link",
+      "command": "assertElementPresent",
+      "target": "linkText=Регистрация",
+      "targets": [
+        ["linkText=Регистрация", "linkText"],
+        ["css=.control-register:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Регистрация')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/register')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
       "value": ""
     }, {
       "id": "8fdfed9f-6126-4ac0-a8c0-8ea9c57ae0fd",
@@ -1123,6 +1255,24 @@
       ],
       "value": ""
     }, {
+      "id": "673d6d37-a401-44d2-9175-2629853b9cf7",
+      "comment": "Assert the registration form is displayed",
+      "command": "assertElementPresent",
+      "target": "css=.panel-default > .panel-body",
+      "targets": [
+        ["css=.panel-default > .panel-body", "css:finder"],
+        ["xpath=//div[@id='col--left']/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "be982b1f-d635-4a6d-b976-f663d6f6ceb8",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return Math.random().toString(36).replace(\"/\\w+/g\", \"\").substring(2, 10)",
+      "targets": [],
+      "value": "randomString"
+    }, {
       "id": "402f5ae5-b11c-45c6-9dec-af9e05dfda5a",
       "comment": "",
       "command": "type",
@@ -1135,7 +1285,7 @@
         ["xpath=//form[@id='register-form']/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "nqkoisitam@gmail.com"
+      "value": "${randomString}@gmail.com"
     }, {
       "id": "09adbf41-d673-4ee1-8a76-38e495d330c9",
       "comment": "",
@@ -1149,7 +1299,7 @@
         ["xpath=//form[@id='register-form']/div[2]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/input", "xpath:position"]
       ],
-      "value": "Nqkoi"
+      "value": "${randomString}"
     }, {
       "id": "ad92af45-1ade-461b-874a-3e8d007e09ee",
       "comment": "",
@@ -1163,7 +1313,7 @@
         ["xpath=//form[@id='register-form']/div[3]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[3]/div/div/input", "xpath:position"]
       ],
-      "value": "Sitam"
+      "value": "${randomString}"
     }, {
       "id": "89fd28d2-bd29-4ce3-aaf5-b551e5ed4d64",
       "comment": "",
@@ -1245,10 +1395,10 @@
     "id": "5a05eebf-c406-462b-8347-def15c409d6c",
     "name": "TestRegistrationFormIncorrectPhone",
     "commands": [{
-      "id": "4d940ba2-f89b-48fb-a644-616521c7a33c",
+      "id": "09c583d3-db9c-44f2-90d9-4bf403414376",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://bileti.bdz.bg/",
       "targets": [],
       "value": ""
     }, {
@@ -1259,25 +1409,58 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "29df89da-3bbd-42dd-ab2a-7f64a2623925",
+      "id": "8284f820-edf2-42fa-b529-0a2de558bbe6",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "//node()[@class=\"control-login\"]",
+      "targets": [],
+      "value": "userNotLogged"
+    }, {
+      "id": "6772e698-9f07-457b-9c25-82cd7b7f2c11",
+      "comment": "",
+      "command": "if",
+      "target": "${userNotLogged} == 0",
+      "targets": [
+        ["linkText=Вход", "linkText"],
+        ["css=#header-controls > .control-login", "css:finder"],
+        ["xpath=(//a[contains(text(),'Вход')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/login')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e01bcee-f0f6-4373-a76d-d7bdc89cbb31",
       "comment": "",
       "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(2) span",
+      "target": "css=.control-exit-profile:nth-child(2)",
       "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(2) span", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div[2]/a/span", "xpath:idRelative"],
-        ["xpath=//div[2]/a/span", "xpath:position"]
+        ["css=.control-exit-profile:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='header-controls']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"]
       ],
-      "value": "",
-      "opensWindow": true,
-      "windowHandleName": "win6629",
-      "windowTimeout": 2000
+      "value": ""
     }, {
-      "id": "c2181969-a306-4dae-b2de-270c26b838dc",
+      "id": "e6be3d74-d18d-43b0-a0f2-5587b21732db",
       "comment": "",
-      "command": "selectWindow",
-      "target": "handle=${win6629}",
+      "command": "end",
+      "target": "",
       "targets": [],
+      "value": ""
+    }, {
+      "id": "89a2f82a-5782-448b-93c0-2faf58fbd092",
+      "comment": "Assert there is a register link",
+      "command": "assertElementPresent",
+      "target": "linkText=Регистрация",
+      "targets": [
+        ["linkText=Регистрация", "linkText"],
+        ["css=.control-register:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Регистрация')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/register')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"]
+      ],
       "value": ""
     }, {
       "id": "88d806a8-f3e6-4f4d-b539-f02873ab3757",
@@ -1294,6 +1477,24 @@
       ],
       "value": ""
     }, {
+      "id": "0b51db04-9893-420b-afb6-3ac815c27d32",
+      "comment": "Assert the registration form is displayed",
+      "command": "assertElementPresent",
+      "target": "css=.panel-default > .panel-body",
+      "targets": [
+        ["css=.panel-default > .panel-body", "css:finder"],
+        ["xpath=//div[@id='col--left']/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "51586720-197c-4cdd-850f-5ecd42fa6dff",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return Math.random().toString(36).replace(\"/\\w+/g\", \"\").substring(2, 10)",
+      "targets": [],
+      "value": "randomString"
+    }, {
       "id": "14be001b-462e-453e-aa86-7766501a6c57",
       "comment": "",
       "command": "type",
@@ -1306,7 +1507,7 @@
         ["xpath=//form[@id='register-form']/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "nqkoisidrug@gmail.com"
+      "value": "${randomString}@gmail.com"
     }, {
       "id": "cbde392d-e867-4d34-8f4f-15304880c704",
       "comment": "",
@@ -1320,7 +1521,7 @@
         ["xpath=//form[@id='register-form']/div[2]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/input", "xpath:position"]
       ],
-      "value": "Nqkoi"
+      "value": "${randomString}"
     }, {
       "id": "7750af7d-4aab-4e5e-a1cd-cc9ce5898ea9",
       "comment": "",
@@ -1334,7 +1535,7 @@
         ["xpath=//form[@id='register-form']/div[3]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[3]/div/div/input", "xpath:position"]
       ],
-      "value": "Sitam"
+      "value": "${randomString}"
     }, {
       "id": "6dee7fa9-b0b0-476f-875c-85649522bee4",
       "comment": "",
@@ -1348,7 +1549,7 @@
         ["xpath=//form[@id='register-form']/div[4]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[4]/div/div/input", "xpath:position"]
       ],
-      "value": "Parola123"
+      "value": "${randomString}"
     }, {
       "id": "b1e221c4-517f-49eb-a2a9-4eebb8187e04",
       "comment": "",
@@ -1362,7 +1563,7 @@
         ["xpath=//form[@id='register-form']/div[5]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[5]/div/div/input", "xpath:position"]
       ],
-      "value": "Parola123"
+      "value": "${randomString}"
     }, {
       "id": "a177ec8e-2a72-4bf1-a3bd-d3351f79ec18",
       "comment": "",
@@ -1376,7 +1577,7 @@
         ["xpath=//form[@id='register-form']/div[6]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[6]/div/div/input", "xpath:position"]
       ],
-      "value": "54328594325924390583902"
+      "value": "${randomString}"
     }, {
       "id": "29336abc-92e5-4d03-b404-ece9d5423004",
       "comment": "",
@@ -1406,53 +1607,11 @@
       "value": ""
     }, {
       "id": "b799c644-b28d-4f6a-983a-86f390f0f40c",
-      "comment": "Assert there is an alert for successful registration",
+      "comment": "Assert there is an alert for invalid phone",
       "command": "assertText",
       "target": "css=.alert",
       "targets": [],
-      "value": "Вие се регистрирахте успешно в системата."
-    }, {
-      "id": "76cb58b4-4b9b-4ee7-92de-0536ab3b348f",
-      "comment": "Assert there is a message, telling you to confirm your email",
-      "command": "assertText",
-      "target": "css=.alert + p",
-      "targets": [],
-      "value": "Моля, проверете електронния си адрес за да потвърдите регистрацията си."
-    }, {
-      "id": "a57a4490-568a-4fe4-9496-13a9e22c5126",
-      "comment": "Assert there is an \"Ok\" button",
-      "command": "assertElementPresent",
-      "target": "linkText=Ok",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "3e90110a-5634-4460-93fb-6d47b2b17dcd",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=Ok",
-      "targets": [
-        ["linkText=Ok", "linkText"],
-        ["css=.text-center > .btn", "css:finder"],
-        ["xpath=//div[@id='col--left']/div/div/div/div[2]/div[2]/a", "xpath:idRelative"],
-        ["xpath=(//a[contains(@href, '/')])[7]", "xpath:href"],
-        ["xpath=//div/div[2]/div[2]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'   Ok   ')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "6f48e457-b97f-4b2e-8069-5fe23193653e",
-      "comment": "",
-      "command": "executeScript",
-      "target": "return window.document.URL",
-      "targets": [],
-      "value": "url"
-    }, {
-      "id": "0c536cdf-5e20-4119-b8db-b27622a09554",
-      "comment": "",
-      "command": "assert",
-      "target": "url",
-      "targets": [],
-      "value": "https://bileti.bdz.bg/"
+      "value": "Въведете валиден телефонен номер."
     }]
   }, {
     "id": "7c871318-0f2c-41c5-a5a5-f64fb00e611e",
@@ -1461,7 +1620,7 @@
       "id": "a1e0fb42-8880-409d-a443-7764fc9c023c",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://bileti.bdz.bg",
       "targets": [],
       "value": ""
     }, {
@@ -1469,28 +1628,6 @@
       "comment": "",
       "command": "setWindowSize",
       "target": "945x1020",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "b07d1baf-efde-489c-b9f5-48dd7a6ac4ac",
-      "comment": "",
-      "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(2) > a",
-      "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(2) > a", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div[2]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://bileti.bdz.bg/')]", "xpath:href"],
-        ["xpath=//nav/div/div/div[2]/a", "xpath:position"]
-      ],
-      "value": "",
-      "opensWindow": true,
-      "windowHandleName": "win7993",
-      "windowTimeout": 2000
-    }, {
-      "id": "a2d06d4f-d8c0-4773-b10d-0523c693f6f3",
-      "comment": "",
-      "command": "selectWindow",
-      "target": "handle=${win7993}",
       "targets": [],
       "value": ""
     }, {
@@ -1508,6 +1645,17 @@
       ],
       "value": ""
     }, {
+      "id": "6e3c96eb-acc7-4a3b-a748-e1e7c1327473",
+      "comment": "Assert there is a login form displayed",
+      "command": "assertElementPresent",
+      "target": "css=.panel-default > .panel-body",
+      "targets": [
+        ["css=.panel-default > .panel-body", "css:finder"],
+        ["xpath=//div[@id='col--left']/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
       "id": "57eb6b30-c4bc-4040-8519-c5f383b30f85",
       "comment": "",
       "command": "type",
@@ -1520,7 +1668,7 @@
         ["xpath=//form[@id='login-form']/div/div/input", "xpath:idRelative"],
         ["xpath=//div/input", "xpath:position"]
       ],
-      "value": "несъществуващ@емайл.бг"
+      "value": "несъществуващ@имейл"
     }, {
       "id": "baf86579-cdd1-49c3-b46a-158e5a26bd01",
       "comment": "",
@@ -1563,7 +1711,7 @@
       "id": "aa647073-267c-40cc-a45e-e98991a7527f",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://live.bdz.bg/",
       "targets": [],
       "value": ""
     }, {
@@ -1574,14 +1722,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "4735053f-28fe-4d09-848f-09385712837d",
-      "comment": "",
-      "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(4) span",
+      "id": "02681287-7eb0-4000-9ad5-a6df34b1b6c1",
+      "comment": "Assert there is a search box",
+      "command": "assertElementPresent",
+      "target": "css=.search-box",
       "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(4) span", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div[4]/a/span", "xpath:idRelative"],
-        ["xpath=//div[4]/a/span", "xpath:position"]
+        ["css=.search-box", "css:finder"],
+        ["xpath=//div[@id='content']/div/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -1591,19 +1739,6 @@
       "target": "Кърджали",
       "targets": [],
       "value": "station"
-    }, {
-      "id": "73d60409-3fd2-49c2-8c4f-a01872d69f23",
-      "comment": "",
-      "command": "type",
-      "target": "id=select_station_0",
-      "targets": [
-        ["id=select_station_0", "id"],
-        ["css=#select_station_0", "css:finder"],
-        ["xpath=//input[@id='select_station_0']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/div/div/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
     }, {
       "id": "d8286174-f1df-4fa5-a027-f1d4c9c6b4d9",
       "comment": "",
@@ -1645,7 +1780,7 @@
       "value": ""
     }, {
       "id": "a4986d39-68f2-4b28-b67b-39d76f9652be",
-      "comment": "",
+      "comment": "Assert that we are seeing results for correct station",
       "command": "assertText",
       "target": "css=.text-center > .mb-0:nth-child(2)",
       "targets": [
@@ -1655,19 +1790,6 @@
         ["xpath=//h1[contains(.,'София')]", "xpath:innerText"]
       ],
       "value": "${station}"
-    }, {
-      "id": "492a8d84-68ea-40e1-853d-1b77a844f386",
-      "comment": "",
-      "command": "click",
-      "target": "id=select_station_0",
-      "targets": [
-        ["id=select_station_0", "id"],
-        ["css=#select_station_0", "css:finder"],
-        ["xpath=//input[@id='select_station_0']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/div/div/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
     }]
   }, {
     "id": "f60f30f5-f492-4faf-850e-f4eef0253ad1",
@@ -1676,7 +1798,7 @@
       "id": "57c72ec7-9547-4d49-842d-503e4b2b7150",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://live.bdz.bg/",
       "targets": [],
       "value": ""
     }, {
@@ -1687,14 +1809,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "f3ae3bb3-c58a-4292-9b1b-bef00db30811",
-      "comment": "",
-      "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(4) span",
+      "id": "294203f6-54a0-428d-81f3-bb83b9531e16",
+      "comment": "Assert there is a search box",
+      "command": "assertElementPresent",
+      "target": "css=.search-box",
       "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(4) span", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div[4]/a/span", "xpath:idRelative"],
-        ["xpath=//div[4]/a/span", "xpath:position"]
+        ["css=.search-box", "css:finder"],
+        ["xpath=//div[@id='content']/div/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -1704,19 +1826,6 @@
       "target": "НякваНесъществуваща",
       "targets": [],
       "value": "station"
-    }, {
-      "id": "50f72515-0385-488a-92e2-c05b9dbbca5e",
-      "comment": "",
-      "command": "type",
-      "target": "id=select_station_0",
-      "targets": [
-        ["id=select_station_0", "id"],
-        ["css=#select_station_0", "css:finder"],
-        ["xpath=//input[@id='select_station_0']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/div/div/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
     }, {
       "id": "3de866aa-828a-4371-a980-63d6b602a6ca",
       "comment": "",
@@ -1733,16 +1842,9 @@
     }, {
       "id": "08721932-bf01-4c6e-967c-393522478183",
       "comment": "",
-      "command": "waitForElementPresent",
+      "command": "waitForElementNotPresent",
       "target": "linkText=${station}",
-      "targets": [
-        ["linkText=Кърджали", "linkText"],
-        ["css=.active > a", "css:finder"],
-        ["xpath=//div[@id='content']/div/div/div[2]/div/ul/li/a", "xpath:idRelative"],
-        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
-        ["xpath=//div[2]/div/ul/li/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Кърджали')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "5000"
     }, {
       "id": "e34730a7-137c-401d-b85a-a7266db3c75d",
@@ -1751,6 +1853,31 @@
       "target": "linkText=${station}",
       "targets": [],
       "value": ""
+    }, {
+      "id": "429e5625-da45-4a74-9715-84d48c069a2b",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=select_station_0",
+      "targets": [
+        ["id=select_station_0", "id"],
+        ["css=#select_station_0", "css:finder"],
+        ["xpath=//input[@id='select_station_0']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "48249f53-4d5d-4a65-abc0-af89b6fd3f13",
+      "comment": "Assert we are still on the same initial result",
+      "command": "assertText",
+      "target": "css=.text-center > .mb-0:nth-child(2)",
+      "targets": [
+        ["css=.text-center > .mb-0:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='content']/div/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'София')]", "xpath:innerText"]
+      ],
+      "value": "София"
     }]
   }, {
     "id": "2acfb37a-32ea-43cd-9906-ecd891c64618",
@@ -1759,7 +1886,7 @@
       "id": "1032a0fc-54ef-43f4-b230-f55fc8726557",
       "comment": "",
       "command": "open",
-      "target": "/bg",
+      "target": "https://radar.bdz.bg",
       "targets": [],
       "value": ""
     }, {
@@ -1770,29 +1897,44 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "257152a5-e92a-4ec2-ba1c-5acbc3d1b2e2",
+      "comment": "Assert there is an interactable map open",
+      "command": "assertElementPresent",
+      "target": "id=map",
+      "targets": [
+        ["id=map", "id"],
+        ["css=#map", "css:finder"],
+        ["xpath=//div[@id='map']", "xpath:attributes"],
+        ["xpath=//div[4]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
       "id": "67ad3432-9e93-44f9-8f35-c5c56cb0186c",
       "comment": "",
       "command": "click",
-      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(5) span",
+      "target": "css=p:nth-child(1) > .btn",
       "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(5) span", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div[5]/a/span", "xpath:idRelative"],
-        ["xpath=//div[5]/a/span", "xpath:position"]
+        ["css=p:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "06d759bd-b163-4488-b8c0-d6d42dea18ae",
-      "comment": "",
-      "command": "click",
-      "target": "css=p:nth-child(1) use",
+      "id": "f90647a4-2ef3-45db-8410-5ab11d8fa2d7",
+      "comment": "Assert the side menu is open",
+      "command": "assertElementPresent",
+      "target": "id=trainList",
       "targets": [
-        ["css=p:nth-child(1) use", "css:finder"]
+        ["id=trainList", "id"],
+        ["css=#trainList", "css:finder"],
+        ["xpath=//div[@id='trainList']", "xpath:attributes"],
+        ["xpath=//div[5]/div[2]", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "e7c70b25-a9a0-4556-97b9-b881861a4b90",
+      "id": "48ca0ba8-05a5-45c1-b0cc-2bd215ac8305",
       "comment": "",
-      "command": "click",
+      "command": "waitForElementPresent",
       "target": "id=filter-train",
       "targets": [
         ["id=filter-train", "id"],
@@ -1802,7 +1944,7 @@
         ["xpath=//div[@id='trainList']/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": ""
+      "value": "5000"
     }, {
       "id": "d044e00a-61cf-472b-8c20-0466a9befa5c",
       "comment": "",
@@ -1816,7 +1958,7 @@
         ["xpath=//div[@id='trainList']/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "1614"
+      "value": "10123"
     }, {
       "id": "92daf39e-198b-45cd-a24f-3578dbbbfbc8",
       "comment": "Assert the train with typed number exists",
@@ -1833,11 +1975,12 @@
       "id": "aceb17be-0b55-42fa-a0cf-eed2269a8cd4",
       "comment": "",
       "command": "click",
-      "target": "css=.list-group-item:nth-child(7) .col-5",
+      "target": "css=.p-1:nth-child(1)",
       "targets": [
-        ["css=.list-group-item:nth-child(7) .col-5", "css:finder"],
-        ["xpath=//div[@id='trainList']/div/div/a[7]/div/div[3]", "xpath:idRelative"],
-        ["xpath=//a[7]/div/div[3]", "xpath:position"]
+        ["css=.p-1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='trainList']/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[3]", "xpath:href"],
+        ["xpath=//div[2]/div/div/a", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -1852,10 +1995,1035 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "5ed03142-71bd-4083-8c30-adcf79246319",
+    "name": "TestTicketReservationOneWay",
+    "commands": [{
+      "id": "b8165556-f1d4-402d-a40e-f56082ad09f4",
+      "comment": "",
+      "command": "open",
+      "target": "/bg",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b4429d8-9358-46cb-9f0f-6d9a2702c298",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1011",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "30d1afb1-444f-4bce-b332-57cf15a512a0",
+      "comment": "Assert there is a button for ticket reservation",
+      "command": "assertElementPresent",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(2) > a",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(2) > a", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://bileti.bdz.bg/')]", "xpath:href"],
+        ["xpath=//nav/div/div/div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bb5e81b-de31-4aa3-8fc3-efde39af096e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(2) span",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/a/span", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win240",
+      "windowTimeout": 2000
+    }, {
+      "id": "494b5b12-d488-422f-8fbb-4063f19e263a",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win240}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0558ac1f-e0ee-4b18-ac9f-440af6edb539",
+      "comment": "Assert the search form is present",
+      "command": "assertElementPresent",
+      "target": "css=#search > .panel-body",
+      "targets": [
+        ["css=#search > .panel-body", "css:finder"],
+        ["xpath=//div[@id='search']/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff2810f4-e3d9-4c6b-8f7e-fc36ea369915",
+      "comment": "",
+      "command": "type",
+      "target": "id=react-select-2-input",
+      "targets": [
+        ["id=react-select-2-input", "id"],
+        ["css=#react-select-2-input", "css:finder"],
+        ["xpath=//input[@id='react-select-2-input']", "xpath:attributes"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "София"
+    }, {
+      "id": "987e2510-bf4e-47fd-a9bf-cad0917a142f",
+      "comment": "Assert there is a dropdown option resembling the typed station",
+      "command": "assertElementPresent",
+      "target": "id=react-select-2-option-572",
+      "targets": [
+        ["id=react-select-2-option-572", "id"],
+        ["css=#react-select-2-option-572", "css:finder"],
+        ["xpath=//div[@id='react-select-2-option-572']", "xpath:attributes"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div[2]/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "93d5100c-73c6-4808-bc4e-f3bc52554310",
+      "comment": "",
+      "command": "click",
+      "target": "id=react-select-2-option-572",
+      "targets": [
+        ["id=react-select-2-option-572", "id"],
+        ["css=#react-select-2-option-572", "css:finder"],
+        ["xpath=//div[@id='react-select-2-option-572']", "xpath:attributes"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div[2]/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f14d2dc1-6412-4750-b8b3-50bec0f8b106",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.css-1pahdxg-control .css-1uccc91-singleValue",
+      "targets": [
+        ["css=.css-1pahdxg-control .css-1uccc91-singleValue", "css:finder"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div/div/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": "from"
+    }, {
+      "id": "0f3be451-2457-444b-b34d-e0b8acedd873",
+      "comment": "",
+      "command": "type",
+      "target": "id=react-select-3-input",
+      "targets": [
+        ["id=react-select-2-input", "id"],
+        ["css=#react-select-2-input", "css:finder"],
+        ["xpath=//input[@id='react-select-2-input']", "xpath:attributes"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Видин"
+    }, {
+      "id": "5b3f26c7-9488-4f22-92ee-f34b0fd71f54",
+      "comment": "Assert there is a dropdown option resembling the typed station",
+      "command": "assertElementPresent",
+      "target": "id=react-select-3-option-98",
+      "targets": [
+        ["id=react-select-3-option-98", "id"],
+        ["css=#react-select-3-option-98", "css:finder"],
+        ["xpath=//div[@id='react-select-3-option-98']", "xpath:attributes"],
+        ["xpath=//div[@id='id-search-trips-station-to']/div[2]/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div[2]/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8769f96b-d0a8-41b3-b912-b968faff6c7f",
+      "comment": "",
+      "command": "click",
+      "target": "id=react-select-3-option-98",
+      "targets": [
+        ["id=react-select-2-option-572", "id"],
+        ["css=#react-select-2-option-572", "css:finder"],
+        ["xpath=//div[@id='react-select-2-option-572']", "xpath:attributes"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div[2]/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53d5a08d-48be-4b7b-a552-f5cf562fceae",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.css-1pahdxg-control .css-1uccc91-singleValue",
+      "targets": [
+        ["css=.css-1pahdxg-control .css-1uccc91-singleValue", "css:finder"],
+        ["xpath=//div[@id='id-search-trips-station-to']/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": "to"
+    }, {
+      "id": "1c9a28e1-ffe1-44b7-9295-cea936757a77",
+      "comment": "Assert there is a date field",
+      "command": "assertElementPresent",
+      "target": "id=id-search-trips-going-date",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c3845e0-9b07-4efd-8bbf-aa3bb0e10d67",
+      "comment": "",
+      "command": "click",
+      "target": "id=id-search-trips-going-date",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4254f8d6-3c1c-4b17-8e36-243ce97f2647",
+      "comment": "Assert there is a date-picker",
+      "command": "assertElementPresent",
+      "target": "css=.react-datepicker",
+      "targets": [
+        ["css=.react-datepicker__month-container", "css:finder"],
+        ["xpath=//form[@id='form-trip-search']/div/div/div[2]/div/div/div/div/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9277dcf-0e84-4f3f-abbf-8546717c69e3",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-search-trips-going-date",
+      "targets": [],
+      "value": "28.02.2022"
+    }, {
+      "id": "0a6b2cb9-7993-4ce8-b72d-7f6507f826b1",
+      "comment": "",
+      "command": "storeValue",
+      "target": "id=id-search-trips-going-date",
+      "targets": [],
+      "value": "date"
+    }, {
+      "id": "172208b9-7667-4047-b042-165004447d5d",
+      "comment": "Assert there is no returning date (one way ticket)",
+      "command": "assertValue",
+      "target": "id=id-search-trips-returning-date",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "651972de-8f13-40e4-8c47-44687ba0d7c7",
+      "comment": "Assert there is a submit button",
+      "command": "assertElementPresent",
+      "target": "css=.btn-info",
+      "targets": [
+        ["css=.btn-info", "css:finder"],
+        ["xpath=//form[@id='form-trip-search']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Търси')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b4a3813-182e-42fc-9d23-2d67acdebfd6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-info",
+      "targets": [
+        ["css=.btn-info", "css:finder"],
+        ["xpath=//form[@id='form-trip-search']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Търси')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbe133b6-3e2a-4d74-940d-8e58d40b0a83",
+      "comment": "Assert correct results displayed",
+      "command": "assertText",
+      "target": "css=.text-header--choose",
+      "targets": [],
+      "value": "${from} - ${to} : ${date}"
+    }]
+  }, {
+    "id": "be2858ac-5092-464a-8d1c-aa0e17380c07",
+    "name": "TestTicketReservationNoStations",
+    "commands": [{
+      "id": "3d421c41-9914-4a88-85f7-085b72987433",
+      "comment": "",
+      "command": "open",
+      "target": "/bg",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f68e09f2-cf48-4312-84ab-2c354c524adb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1011",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "36582a6f-2711-469e-ae88-4b3ab64c887b",
+      "comment": "Assert there is a button for ticket reservation",
+      "command": "assertElementPresent",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(2) > a",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(2) > a", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://bileti.bdz.bg/')]", "xpath:href"],
+        ["xpath=//nav/div/div/div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43872ca8-2ab2-4459-be5c-b766e000ffbf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(2) span",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/a/span", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win9009",
+      "windowTimeout": 2000
+    }, {
+      "id": "944fb1ed-4f56-4e60-9900-eb872c901d29",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win9009}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "394564ab-ad63-4665-bca0-f29d37a3efe4",
+      "comment": "Assert no departure station is chosen",
+      "command": "assertElementPresent",
+      "target": "css=#id-search-trips-station-from .css-1wa3eu0-placeholder",
+      "targets": [
+        ["css=.css-1pahdxg-control .css-1wa3eu0-placeholder", "css:finder"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div/div/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3341a18-dda5-416e-a02a-869595efb5a5",
+      "comment": "Assert no arrival station is chosen",
+      "command": "assertElementPresent",
+      "target": "css=#id-search-trips-station-to .css-1wa3eu0-placeholder",
+      "targets": [
+        ["css=.css-1pahdxg-control .css-1wa3eu0-placeholder", "css:finder"],
+        ["xpath=//div[@id='id-search-trips-station-to']/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f2c77c1-abe9-45b3-a4ea-d66b8ebc343c",
+      "comment": "Assert there is a submit button",
+      "command": "assertElementPresent",
+      "target": "css=.btn-info",
+      "targets": [
+        ["css=.btn-info", "css:finder"],
+        ["xpath=//form[@id='form-trip-search']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Търси')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "892f4934-0467-4a60-977d-45853deb0dd5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-info",
+      "targets": [
+        ["css=.btn-info", "css:finder"],
+        ["xpath=//form[@id='form-trip-search']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Търси')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "66473435-ba72-4d00-b354-6e8490f496ca",
+      "comment": "Assert the fields have a red border",
+      "command": "assertElementPresent",
+      "target": "css=.invalid__value-container",
+      "targets": [
+        ["css=.invalid__control--is-focused > .invalid__value-container", "css:finder"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "47aba409-a66f-47e9-b1e8-23b7b7586294",
+    "name": "TestTicketReservationTwoPeople",
+    "commands": [{
+      "id": "af88c5c5-a05e-46bf-9fc4-cc677c53f2b0",
+      "comment": "",
+      "command": "open",
+      "target": "https://bileti.bdz.bg/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3fef4eae-9c91-409e-bc12-d98d62c02560",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1011",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1636e87f-bb6b-4048-8bba-59434f7b8ad2",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "//node()[@class=\"control-login\"]",
+      "targets": [],
+      "value": "userNotLogged"
+    }, {
+      "id": "963d62e6-c6be-4fe0-ac09-e3fd7a7a639c",
+      "comment": "",
+      "command": "if",
+      "target": "${userNotLogged} > 0",
+      "targets": [
+        ["linkText=Вход", "linkText"],
+        ["css=#header-controls > .control-login", "css:finder"],
+        ["xpath=(//a[contains(text(),'Вход')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/login')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c94933b-8929-4291-881e-0651da2e887a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Вход",
+      "targets": [
+        ["linkText=Вход", "linkText"],
+        ["css=#header-controls > .control-login", "css:finder"],
+        ["xpath=(//a[contains(text(),'Вход')])[2]", "xpath:link"],
+        ["xpath=//div[@id='header-controls']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/login')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "778b7c93-681d-458f-9124-9cb71c29cb6c",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-email",
+      "targets": [
+        ["id=id-email", "id"],
+        ["name=username", "name"],
+        ["css=#id-email", "css:finder"],
+        ["xpath=//input[@id='id-email']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "hifide7813@zherben.com"
+    }, {
+      "id": "76e2ffef-e8bf-44bf-869c-bde33002a030",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-password",
+      "targets": [
+        ["id=id-password", "id"],
+        ["name=password", "name"],
+        ["css=#id-password", "css:finder"],
+        ["xpath=//input[@id='id-password']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "hifide7813"
+    }, {
+      "id": "640dfd29-1541-47b2-ab2a-1ee53795dda4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Вход')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "030b3cbb-1c9c-4366-adfe-be04ddefb902",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "101de069-aa8a-42d2-b122-dff78f564aa8",
+      "comment": "Assert the user is logged in",
+      "command": "assertElementPresent",
+      "target": "linkText=hifide7813 hifide7813 ( Профил )",
+      "targets": [
+        ["linkText=hifide7813 hifide7813 ( Профил )", "linkText"],
+        ["css=#header-controls > .control-profile", "css:finder"],
+        ["xpath=//div[@id='header-controls']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/profile')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'hifide7813 hifide7813 ( Профил )')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbb40d29-3c90-4b56-99a9-d7a05cd87165",
+      "comment": "Assert the search form is present",
+      "command": "assertElementPresent",
+      "target": "css=#search > .panel-body",
+      "targets": [
+        ["css=#search > .panel-body", "css:finder"],
+        ["xpath=//div[@id='search']/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b01db50-0187-4103-bc27-7447baf40692",
+      "comment": "",
+      "command": "if",
+      "target": "${userNotLogged} > 0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b792d25e-df68-4ef6-a925-13c31ae592c0",
+      "comment": "",
+      "command": "type",
+      "target": "id=react-select-4-input",
+      "targets": [
+        ["id=react-select-2-input", "id"],
+        ["css=#react-select-2-input", "css:finder"],
+        ["xpath=//input[@id='react-select-2-input']", "xpath:attributes"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "София"
+    }, {
+      "id": "bfec91fb-2ba6-4066-a79e-fbf68a48bc0a",
+      "comment": "",
+      "command": "click",
+      "target": "id=react-select-4-option-572",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ec3ebd5-cdf6-4ca4-ac5b-cca39cfcbbd7",
+      "comment": "",
+      "command": "type",
+      "target": "id=react-select-5-input",
+      "targets": [
+        ["id=react-select-2-input", "id"],
+        ["css=#react-select-2-input", "css:finder"],
+        ["xpath=//input[@id='react-select-2-input']", "xpath:attributes"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Видин"
+    }, {
+      "id": "b9fbc6ae-ba4a-40b8-a7bf-74524f44019e",
+      "comment": "",
+      "command": "click",
+      "target": "id=react-select-5-option-98",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5a68d890-1d08-4c74-9391-7cee2fa15ea2",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c4430251-61d4-4068-83e3-5806d5828993",
+      "comment": "",
+      "command": "type",
+      "target": "id=react-select-2-input",
+      "targets": [
+        ["id=react-select-2-input", "id"],
+        ["css=#react-select-2-input", "css:finder"],
+        ["xpath=//input[@id='react-select-2-input']", "xpath:attributes"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "София"
+    }, {
+      "id": "1949235f-1468-4b0e-84cd-e1bde1b940de",
+      "comment": "",
+      "command": "click",
+      "target": "id=react-select-2-option-572",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "997774a1-d86b-4e99-8773-9b3cb4edb18e",
+      "comment": "",
+      "command": "type",
+      "target": "id=react-select-3-input",
+      "targets": [
+        ["id=react-select-2-input", "id"],
+        ["css=#react-select-2-input", "css:finder"],
+        ["xpath=//input[@id='react-select-2-input']", "xpath:attributes"],
+        ["xpath=//div[@id='id-search-trips-station-from']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Видин"
+    }, {
+      "id": "365b8631-64ce-4a2c-ab1a-b69e51766bcd",
+      "comment": "",
+      "command": "click",
+      "target": "id=react-select-3-option-98",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0bcf7748-b6f9-4e20-a2dc-fed1061e6690",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fed8a073-c0b7-4c15-b879-df8d02fca588",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-search-trips-going-date",
+      "targets": [],
+      "value": "10.01.2022"
+    }, {
+      "id": "ccec6632-e868-4796-a328-2aea7170516d",
+      "comment": "Assert there is a submit button",
+      "command": "assertElementPresent",
+      "target": "css=.btn--trip-select-submit",
+      "targets": [
+        ["css=.btn--trip-select-submit", "css:finder"],
+        ["xpath=//form[@id='form-trip-search']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Търси')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d21c8a37-689b-4b88-913a-640b3fda2069",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-info",
+      "targets": [
+        ["css=.btn-info", "css:finder"],
+        ["xpath=//form[@id='form-trip-search']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Търси')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "617c70b7-8bdb-4fa5-817a-475868e1952e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//div[@data-direction=\"to\"]//li[@class=\"list-group-item\" and @data-index=\"0\"]",
+      "targets": [],
+      "value": "5000"
+    }, {
+      "id": "32642e72-4483-4fc9-8e54-95007f2601b2",
+      "comment": "Assert there are results",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@data-direction=\"to\"]//li[@class=\"list-group-item\" and @data-index=\"0\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c6780873-72a2-4935-80dd-c9ea6874182d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.list-group-item:nth-child(1) > .row:nth-child(3) > .col-xs-10",
+      "targets": [
+        ["css=.list-group-item:nth-child(1) > .row:nth-child(3) > .col-xs-10", "css:finder"],
+        ["xpath=//div[@id='col--left']/form/div/div[2]/div/div/div/ul/li/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18a507cb-20b6-40ed-9e2a-a4ffda5ebbe5",
+      "comment": "Assert there is a continue button",
+      "command": "assertElementPresent",
+      "target": "id=btn-wizard-next",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "58a8f682-1950-44bd-aab3-7dbe491c169e",
+      "comment": "",
+      "command": "click",
+      "target": "id=btn-wizard-next",
+      "targets": [
+        ["id=btn-wizard-next", "id"],
+        ["css=#btn-wizard-next", "css:finder"],
+        ["xpath=//button[@id='btn-wizard-next']", "xpath:attributes"],
+        ["xpath=//div[@id='col--left']/form/div/div[3]/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Следваща стъпка')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a05636a3-7b40-47d9-8644-0681346f90e8",
+      "comment": "",
+      "command": "store",
+      "target": "0",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "6399ef21-433b-43a4-b1be-5c1809231c7e",
+      "comment": "",
+      "command": "do",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8df2140-d49c-4935-b3ea-53153ee16a46",
+      "comment": "Assert there is a gender option dropdown",
+      "command": "assertElementPresent",
+      "target": "id=passengers-{{count}}-gender",
+      "targets": [
+        ["id=passengers-{{count}}-gender", "id"],
+        ["name=passengers_{{count}}_gender", "name"],
+        ["css=#passengers-\\{\\{count\\}\\}-gender", "css:finder"],
+        ["xpath=//select[@id='passengers-{{count}}-gender']", "xpath:attributes"],
+        ["xpath=//form[@id='form-ticketing']/div/div[2]/div/div/div[2]/div/div/fieldset/div[2]/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92ec8536-4163-4b93-bfb6-36edbf531fcd",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=(//input[contains(@class, 'passengers-names')])[${count}+1]",
+      "targets": [
+        ["css=.passenger-forms-container:nth-child(2) .passengers-names", "css:finder"],
+        ["xpath=(//input[@value=''])[3]", "xpath:attributes"],
+        ["xpath=//form[@id='form-ticketing']/div/div[2]/div/div/div[2]/div[2]/div/fieldset/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/fieldset/div/div/input", "xpath:position"]
+      ],
+      "value": "hifide7813 hifide7813"
+    }, {
+      "id": "a356ca68-c55a-42f1-88fd-e3d81760ab83",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//select[@id='passengers-{{count}}-gender'])[${count}+1]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c03487c8-63cf-4a2b-a900-cd7ee59f2d5b",
+      "comment": "",
+      "command": "select",
+      "target": "xpath=(//select[@id='passengers-{{count}}-gender'])[${count}+1]",
+      "targets": [],
+      "value": "label=Мъж"
+    }, {
+      "id": "82f6db42-4a91-426a-b196-423f21b9551a",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=(//div[@class=\"react-datepicker__input-container\"]//input)[${count}+1]",
+      "targets": [
+        ["id=id-birth_date_1", "id"],
+        ["css=#id-birth_date_1", "css:finder"],
+        ["xpath=//input[@id='id-birth_date_1']", "xpath:attributes"],
+        ["xpath=//form[@id='form-ticketing']/div/div[2]/div/div/div[2]/div[2]/div/fieldset/div[2]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/fieldset/div[2]/div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "02.12.2021"
+    }, {
+      "id": "322827fa-bd13-4690-a8cc-b36378e4e4bd",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${count} + 1",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "5cb2f470-1bec-4b3d-bdc8-16f50a8805a6",
+      "comment": "",
+      "command": "if",
+      "target": "${count} < 2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "451b961b-6122-4a97-bb03-7fa4b9769e72",
+      "comment": "Assert there is a button to add passenger",
+      "command": "assertElementPresent",
+      "target": "css=.btn-custom-add-passenger",
+      "targets": [
+        ["css=.btn-custom-add-passenger", "css:finder"],
+        ["xpath=(//button[@type='button'])[8]", "xpath:attributes"],
+        ["xpath=//form[@id='form-ticketing']/div/div[2]/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5d3a60c-dc4a-45b8-a612-328de1d618d0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-custom-add-passenger",
+      "targets": [
+        ["css=.btn-custom-add-passenger", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//form[@id='form-ticketing']/div/div[2]/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c38bc6b6-397b-40e2-a565-cfd7e93fc26e",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9c8b597e-5756-4963-94b9-2285c636fa78",
+      "comment": "",
+      "command": "repeatIf",
+      "target": "${count} < 2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "19fe32aa-28e4-48d0-9e87-d483220a026a",
+      "comment": "Assert there is a continue button",
+      "command": "assertElementPresent",
+      "target": "id=btn-ticket-next",
+      "targets": [
+        ["id=btn-ticket-next", "id"],
+        ["css=#btn-ticket-next", "css:finder"],
+        ["xpath=//button[@id='btn-ticket-next']", "xpath:attributes"],
+        ["xpath=//form[@id='form-ticketing']/div/div[2]/div/div[2]/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Следваща стъпка')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbded4fd-cac3-4e84-a970-0287b31a64ec",
+      "comment": "",
+      "command": "click",
+      "target": "id=btn-ticket-next",
+      "targets": [
+        ["id=btn-wizard-next", "id"],
+        ["css=#btn-wizard-next", "css:finder"],
+        ["xpath=//button[@id='btn-wizard-next']", "xpath:attributes"],
+        ["xpath=//div[@id='col--left']/form/div/div[3]/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Следваща стъпка')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f002d649-a3c8-4e56-9751-0d05474f9031",
+      "comment": "Wait for section to load",
+      "command": "waitForElementPresent",
+      "target": "css=.panel-body > .row > .col-md-12",
+      "targets": [
+        ["css=.panel-body > .row > .col-md-12", "css:finder"],
+        ["xpath=//div[@id='col--left']/div/div[2]/div/div[2]/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": "10000"
+    }, {
+      "id": "bcd44945-026f-49f6-8708-8f5be6646e3a",
+      "comment": "Assert there is a continue button",
+      "command": "assertElementPresent",
+      "target": "css=.col-xs-6 > .btn-info",
+      "targets": [
+        ["css=.col-xs-6 > .btn-info", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='col--left']/div/div[2]/div/div[3]/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Следваща стъпка')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3508da08-8576-484a-be71-c741b152e484",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-xs-6 > .btn-info",
+      "targets": [
+        ["css=.col-xs-6 > .btn-info", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='col--left']/div/div[2]/div/div[3]/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Следваща стъпка')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1603de7-edf1-4fdb-81c0-903c7a1fbccb",
+      "comment": "Wait for section to load",
+      "command": "waitForElementPresent",
+      "target": "css=#ticket_preview > .panel-body:nth-child(2)",
+      "targets": [
+        ["css=#ticket_preview > .panel-body:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='ticket_preview']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "10000"
+    }, {
+      "id": "2f4fc460-6e0f-4867-ac74-fb8b79280ef2",
+      "comment": "Assert there is a preview form",
+      "command": "assertElementPresent",
+      "target": "css=#ticket_preview > .panel-body:nth-child(2)",
+      "targets": [
+        ["css=#ticket_preview > .panel-body:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='ticket_preview']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "8611694d-7f89-4172-9faa-fd5a896094c1",
+    "name": "TestHomePageLive",
+    "commands": [{
+      "id": "f0d60d66-4ea5-4986-8dc4-18fa3f627be6",
+      "comment": "",
+      "command": "open",
+      "target": "/bg",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e32a678-e5e1-4a35-9d1c-15120ac3b428",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1011",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "08d7a969-8854-487a-9b84-1213af3300b7",
+      "comment": "Assert there is a timetable button",
+      "command": "assertElementPresent",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(4) > a",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(4) > a", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://live.bdz.bg/bg')]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9cdfb553-1669-4415-a249-2f2c28067e6b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(4) > a",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(4) > a", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://live.bdz.bg/bg')]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd048dac-245f-4190-b3f0-51739c247987",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.document.URL.startsWith(\"https://live.bdz.bg/bg\")",
+      "targets": [],
+      "value": "isValidUrl"
+    }, {
+      "id": "e1c1a4bf-025e-49ba-9946-043cfb78ce78",
+      "comment": "Assert the url is valid",
+      "command": "assert",
+      "target": "isValidUrl",
+      "targets": [],
+      "value": "true"
+    }]
+  }, {
+    "id": "c77d8c6b-0738-4cac-9ccb-fd012bfc5d1b",
+    "name": "TestHomePageRadar",
+    "commands": [{
+      "id": "a90cdf65-a9aa-4a74-ab33-28254a57ab38",
+      "comment": "",
+      "command": "open",
+      "target": "/bg",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f674ceb0-c622-43a0-a98b-989990f9f393",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1011",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a2b5f6a4-fd15-4b77-9227-82b3d1b99cb9",
+      "comment": "Assert there is a radar button",
+      "command": "assertElementPresent",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(5) > a",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(5) > a", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://radar.bdz.bg/bg')]", "xpath:href"],
+        ["xpath=//div[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b2f2992-9cca-485c-9b84-8416e288b6f9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(5) > a",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(5) > a", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://radar.bdz.bg/bg')]", "xpath:href"],
+        ["xpath=//div[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37229a19-59a5-4ce3-8f0d-281d3a80e7ba",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.document.URL",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "8487e5fa-e284-49f5-a51a-03fdaba6e180",
+      "comment": "Assert the url is valid",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://radar.bdz.bg/bg"
+    }]
+  }, {
+    "id": "90730d90-718d-4214-b47f-7a99cb14642d",
+    "name": "TestHomePageSignals",
+    "commands": [{
+      "id": "7065f118-2fe9-40aa-ae15-be69356196b9",
+      "comment": "",
+      "command": "open",
+      "target": "/bg",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "152a0f24-1e8f-48bf-a555-80d26f73ada7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1011",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "001b7c69-a447-4f29-b475-2ab7acf37d1d",
+      "comment": "Assert there is a signals button",
+      "command": "assertElementPresent",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(6) > a",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(6) > a", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.bdz.bg/bg/contact-form')]", "xpath:href"],
+        ["xpath=//div[6]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23d93804-d18b-48a8-a20c-1118def0a59a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.site-nav:nth-child(2) .col-4:nth-child(6) > a",
+      "targets": [
+        ["css=.site-nav:nth-child(2) .col-4:nth-child(6) > a", "css:finder"],
+        ["xpath=//div[@id='content']/nav/div/div/div[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.bdz.bg/bg/contact-form')]", "xpath:href"],
+        ["xpath=//div[6]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "058a7e68-770b-4425-8b70-248944138d88",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.document.URL",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "c8a1960c-3be2-487b-b4f2-d87bd78a24c2",
+      "comment": "Assert the url is valid",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://www.bdz.bg/bg/contact-form"
+    }]
   }],
   "suites": [{
     "id": "34cce664-0b68-4e97-8159-27d0c387f888",
-    "name": "TrainSchedule",
+    "name": "Timetable",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
@@ -1888,7 +3056,21 @@
     "parallel": false,
     "timeout": 300,
     "tests": ["7c871318-0f2c-41c5-a5a5-f64fb00e611e"]
+  }, {
+    "id": "ec243f4a-a09a-48ff-bbb2-328df89589d5",
+    "name": "TicketReservation",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["be2858ac-5092-464a-8d1c-aa0e17380c07", "5ed03142-71bd-4083-8c30-adcf79246319", "47aba409-a66f-47e9-b1e8-23b7b7586294"]
+  }, {
+    "id": "ac4b0366-9713-4c54-baaa-a9110133b37c",
+    "name": "HomePage",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["8611694d-7f89-4172-9faa-fd5a896094c1", "c77d8c6b-0738-4cac-9ccb-fd012bfc5d1b", "90730d90-718d-4214-b47f-7a99cb14642d"]
   }],
-  "urls": ["https://www.bdz.bg/"],
+  "urls": ["https://www.bdz.bg/", "https://bileti.bdz.bg/"],
   "plugins": []
 }
