@@ -1577,7 +1577,7 @@
         ["xpath=//form[@id='register-form']/div[6]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[6]/div/div/input", "xpath:position"]
       ],
-      "value": "${randomString}"
+      "value": "asd"
     }, {
       "id": "29336abc-92e5-4d03-b404-ece9d5423004",
       "comment": "",
@@ -1682,7 +1682,7 @@
         ["xpath=//form[@id='login-form']/div[2]/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/input", "xpath:position"]
       ],
-      "value": "parola123"
+      "value": "Parola123"
     }, {
       "id": "c1c05a5f-560b-43f1-8fc2-bec58333660e",
       "comment": "",
@@ -2187,7 +2187,7 @@
       "command": "type",
       "target": "id=id-search-trips-going-date",
       "targets": [],
-      "value": "28.02.2022"
+      "value": "07.01.2022"
     }, {
       "id": "0a6b2cb9-7993-4ce8-b72d-7f6507f826b1",
       "comment": "",
@@ -2574,7 +2574,7 @@
       "command": "type",
       "target": "id=id-search-trips-going-date",
       "targets": [],
-      "value": "10.01.2022"
+      "value": "07.01.2022"
     }, {
       "id": "ccec6632-e868-4796-a328-2aea7170516d",
       "comment": "Assert there is a submit button",
@@ -2795,27 +2795,21 @@
     }, {
       "id": "f002d649-a3c8-4e56-9751-0d05474f9031",
       "comment": "Wait for section to load",
-      "command": "waitForElementPresent",
-      "target": "css=.panel-body > .row > .col-md-12",
+      "command": "waitForElementVisible",
+      "target": "css=.panel-blue:nth-child(1) > .panel-body:nth-child(2)",
       "targets": [
-        ["css=.panel-body > .row > .col-md-12", "css:finder"],
-        ["xpath=//div[@id='col--left']/div/div[2]/div/div[2]/div[2]/div", "xpath:idRelative"],
-        ["xpath=//div[2]/div[2]/div", "xpath:position"]
+        ["css=.panel-blue:nth-child(1) > .panel-body:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='col--left']/div/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
       ],
       "value": "10000"
     }, {
       "id": "bcd44945-026f-49f6-8708-8f5be6646e3a",
       "comment": "Assert there is a continue button",
-      "command": "assertElementPresent",
+      "command": "waitForElementPresent",
       "target": "css=.col-xs-6 > .btn-info",
-      "targets": [
-        ["css=.col-xs-6 > .btn-info", "css:finder"],
-        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
-        ["xpath=//div[@id='col--left']/div/div[2]/div/div[3]/div/div[3]/button", "xpath:idRelative"],
-        ["xpath=//div[3]/div/div[3]/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Следваща стъпка')]", "xpath:innerText"]
-      ],
-      "value": ""
+      "targets": [],
+      "value": "30000"
     }, {
       "id": "3508da08-8576-484a-be71-c741b152e484",
       "comment": "",
@@ -2832,14 +2826,10 @@
     }, {
       "id": "d1603de7-edf1-4fdb-81c0-903c7a1fbccb",
       "comment": "Wait for section to load",
-      "command": "waitForElementPresent",
+      "command": "waitForElementVisible",
       "target": "css=#ticket_preview > .panel-body:nth-child(2)",
-      "targets": [
-        ["css=#ticket_preview > .panel-body:nth-child(2)", "css:finder"],
-        ["xpath=//div[@id='ticket_preview']/div[2]", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div[2]", "xpath:position"]
-      ],
-      "value": "10000"
+      "targets": [],
+      "value": "30000"
     }, {
       "id": "2f4fc460-6e0f-4867-ac74-fb8b79280ef2",
       "comment": "Assert there is a preview form",
@@ -2872,15 +2862,10 @@
     }, {
       "id": "08d7a969-8854-487a-9b84-1213af3300b7",
       "comment": "Assert there is a timetable button",
-      "command": "assertElementPresent",
+      "command": "waitForElementPresent",
       "target": "css=.site-nav:nth-child(2) .col-4:nth-child(4) > a",
-      "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(4) > a", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div[4]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://live.bdz.bg/bg')]", "xpath:href"],
-        ["xpath=//div[4]/a", "xpath:position"]
-      ],
-      "value": ""
+      "targets": [],
+      "value": "5000"
     }, {
       "id": "9cdfb553-1669-4415-a249-2f2c28067e6b",
       "comment": "",
@@ -2928,15 +2913,10 @@
     }, {
       "id": "a2b5f6a4-fd15-4b77-9227-82b3d1b99cb9",
       "comment": "Assert there is a radar button",
-      "command": "assertElementPresent",
+      "command": "waitForElementPresent",
       "target": "css=.site-nav:nth-child(2) .col-4:nth-child(5) > a",
-      "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(5) > a", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div[5]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://radar.bdz.bg/bg')]", "xpath:href"],
-        ["xpath=//div[5]/a", "xpath:position"]
-      ],
-      "value": ""
+      "targets": [],
+      "value": "30000"
     }, {
       "id": "0b2f2992-9cca-485c-9b84-8416e288b6f9",
       "comment": "",
@@ -2984,15 +2964,10 @@
     }, {
       "id": "001b7c69-a447-4f29-b475-2ab7acf37d1d",
       "comment": "Assert there is a signals button",
-      "command": "assertElementPresent",
+      "command": "waitForElementPresent",
       "target": "css=.site-nav:nth-child(2) .col-4:nth-child(6) > a",
-      "targets": [
-        ["css=.site-nav:nth-child(2) .col-4:nth-child(6) > a", "css:finder"],
-        ["xpath=//div[@id='content']/nav/div/div/div[6]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://www.bdz.bg/bg/contact-form')]", "xpath:href"],
-        ["xpath=//div[6]/a", "xpath:position"]
-      ],
-      "value": ""
+      "targets": [],
+      "value": "30000"
     }, {
       "id": "23d93804-d18b-48a8-a20c-1118def0a59a",
       "comment": "",
