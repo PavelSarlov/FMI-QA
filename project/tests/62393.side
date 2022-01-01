@@ -22,24 +22,13 @@
       "value": ""
     }, {
       "id": "dbb46654-38b0-4078-9e09-726822143937",
-      "comment": "Assert there is a from-to form",
+      "comment": "Assert there is a timetable search form",
       "command": "assertElementPresent",
       "target": "css=.card-body:nth-child(2)",
       "targets": [
         ["css=.card-body:nth-child(2)", "css:finder"],
         ["xpath=//form[@id='razpisanieTable']/div/div[2]", "xpath:idRelative"],
         ["xpath=//form/div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "7e90d545-3fa5-47b7-a6bc-eb382f143427",
-      "comment": "Assert there is a form for options",
-      "command": "assertElementPresent",
-      "target": "css=.pt-0",
-      "targets": [
-        ["css=.pt-0", "css:finder"],
-        ["xpath=//form[@id='razpisanieTable']/div[2]/div", "xpath:idRelative"],
-        ["xpath=//form/div[2]/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -158,24 +147,13 @@
       "value": ""
     }, {
       "id": "d776a916-4842-4dfa-b9e9-887898fb772b",
-      "comment": "Assert there is a from-to form",
+      "comment": "Assert there is a timetable search form",
       "command": "assertElementPresent",
       "target": "css=.card-body:nth-child(2)",
       "targets": [
         ["css=.card-body:nth-child(2)", "css:finder"],
         ["xpath=//form[@id='razpisanieTable']/div/div[2]", "xpath:idRelative"],
         ["xpath=//form/div/div[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "9ab6a234-7fad-464a-aecd-81fe3291b029",
-      "comment": "Assert there is a form for options",
-      "command": "assertElementPresent",
-      "target": "css=.pt-0",
-      "targets": [
-        ["css=.pt-0", "css:finder"],
-        ["xpath=//form[@id='razpisanieTable']/div[2]/div", "xpath:idRelative"],
-        ["xpath=//form/div[2]/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -404,7 +382,7 @@
       "value": ""
     }, {
       "id": "3dd043ac-d65d-4ef0-b5eb-74cd7b472e64",
-      "comment": "Assert there is a from-to form",
+      "comment": "Assert there is a timetable search form",
       "command": "assertElementPresent",
       "target": "css=.card-body:nth-child(2)",
       "targets": [
@@ -587,7 +565,7 @@
       "value": ""
     }, {
       "id": "2ffbc30a-839d-4b05-b4bf-39535acda113",
-      "comment": "Assert there is a from-to form",
+      "comment": "Assert there is a timetable search form",
       "command": "assertElementPresent",
       "target": "css=.card-body:nth-child(2)",
       "targets": [
@@ -2861,7 +2839,7 @@
       "value": ""
     }, {
       "id": "08d7a969-8854-487a-9b84-1213af3300b7",
-      "comment": "Assert there is a timetable button",
+      "comment": "Assert there is a LIVE section button",
       "command": "waitForElementPresent",
       "target": "css=.site-nav:nth-child(2) .col-4:nth-child(4) > a",
       "targets": [],
@@ -2912,7 +2890,7 @@
       "value": ""
     }, {
       "id": "a2b5f6a4-fd15-4b77-9227-82b3d1b99cb9",
-      "comment": "Assert there is a radar button",
+      "comment": "Assert there is a RADAR button",
       "command": "waitForElementPresent",
       "target": "css=.site-nav:nth-child(2) .col-4:nth-child(5) > a",
       "targets": [],
@@ -2963,7 +2941,7 @@
       "value": ""
     }, {
       "id": "001b7c69-a447-4f29-b475-2ab7acf37d1d",
-      "comment": "Assert there is a signals button",
+      "comment": "Assert there is a SIGNALS button",
       "command": "waitForElementPresent",
       "target": "css=.site-nav:nth-child(2) .col-4:nth-child(6) > a",
       "targets": [],
