@@ -2085,14 +2085,12 @@
       "id": "101de069-aa8a-42d2-b122-dff78f564aa8",
       "comment": "Assert the user is logged in",
       "command": "assertElementPresent",
-      "target": "linkText=hifide7813 hifide7813 ( Профил )",
+      "target": "css=.control-exit-profile:nth-child(2)",
       "targets": [
-        ["linkText=hifide7813 hifide7813 ( Профил )", "linkText"],
-        ["css=#header-controls > .control-profile", "css:finder"],
-        ["xpath=//div[@id='header-controls']/a", "xpath:idRelative"],
-        ["xpath=(//a[contains(@href, '/profile')])[2]", "xpath:href"],
-        ["xpath=//div[2]/div/a", "xpath:position"],
-        ["xpath=//a[contains(.,'hifide7813 hifide7813 ( Профил )')]", "xpath:innerText"]
+        ["css=.control-exit-profile:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='header-controls']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"]
       ],
       "value": ""
     }, {
